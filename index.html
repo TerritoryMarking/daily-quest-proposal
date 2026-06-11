@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>생성된 문서</title>
+    <style>
+        :root { --border-color: #cbd5e1; --table-th-bg: #f4f5f7; --table-hover: #ebecf0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 40px; background-color: #ffffff; color: #000000; }
+        .document-wrapper { width: 100%; max-width: 1600px; padding: 40px; box-sizing: border-box; margin: 0 auto; scroll-behavior: smooth; }
+        
+        .document-wrapper h1:not(.doc-main-title)::before,
+        .document-wrapper h2::before,
+        .document-wrapper h3:not(.toc-title)::before,
+        .document-wrapper h4::before {
+            content: attr(data-prefix);
+        }
+        
+        a.toc-backlink { color: inherit; text-decoration: none; cursor: pointer; }
+        a.toc-backlink:hover { text-decoration: underline; }
+
+        h1, h2, h3, h4, p, li { margin-top: 0; }
+        hr { border: 0; border-top: 1px solid var(--border-color); margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        th, td { border: 1px solid var(--border-color); padding: 12px; text-align: left; vertical-align: top; }
+        th { background-color: var(--table-th-bg); font-weight: bold; }
+        tr:hover { background-color: var(--table-hover); }
+        
+        /* 외부 삽입된 프로토타입/다이어그램 공통 여백 처리 */
+        .simulator-dashboard { width: 860px; background: #ebecf0; border: 1px solid #c1c7d0; border-radius: 8px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; margin-bottom:20px;}
+        .device-screen { width: 860px; height: 520px; background: #ffffff; border: 4px solid #97a0af; border-radius: 16px; position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); box-sizing: border-box; margin: 20px 0; }
+        .game-view { width: 100%; height: 100%; padding: 25px; box-sizing: border-box; display: none; position: absolute; top: 0; left: 0; overflow-y: auto; }
+        .game-view.active { display: block; }
+        .btn { padding: 10px 20px; font-size: 13px; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; }
+        .btn-blue { background: #0052cc; color: white; }
+        .btn-gray { background: #6b778c; color: white; }
+        .schedule-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .popup-backdrop { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 30, 66, 0.4); display: none; justify-content: center; align-items: center; z-index: 10; }
+        .popup-panel { width: 740px; background: #ffffff; border: 1px solid #97a0af; border-radius: 12px; padding: 20px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <div class="document-wrapper">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <h1 class="doc-main-title">부탁 컨텐츠 시스템 제안서</h1>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 0;">작성일: 2026.06.12</p><p style="font-size: 12px; color: var(--text-muted); margin-top: 0;"><br></p><table class="content-table"><tbody><tr><th>⚠️들어가기 전에⚠️</th></tr><tr><td>해당 html 문서는 ⚠️<b><u>인터넷 연결</u></b>⚠️을 필요로 합니다.<br><br><br>인터넷 연결이 불가능한 상황이신 경우, 동봉된 pdf 파일 버전의 문서로 확인해주시기 바랍니다!<br><br><br><br></td></tr></tbody></table><p style="font-size: 12px; color: var(--text-muted);"><br></p><p style="font-size: 12px; color: var(--text-muted); margin-top: 0;"><br></p><p style="font-size: 12px; color: var(--text-muted); margin-top: 0;"><br></p><p style="font-size: 12px; color: var(--text-muted); margin-top: 0;"><br></p><p style="font-size: 12px; color: var(--text-muted); margin-top: 0;"><br></p>
+
+        <!-- 목차 영역 -->
+        <div id="dynamic-toc" style="background-color: rgb(248, 250, 252); padding: 25px; border: 1px solid rgb(203, 213, 225); border-radius: 8px; margin: 20px 0px; outline-offset: 4px;"><h3 class="toc-title" style="margin-top: 0; color: #0747a6; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px;">목 차</h3><ul style="padding-left: 0; margin-bottom: 0; line-height: 1.8; list-style-type: none;"><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-qhx86g4lv" style="color: #172b4d; text-decoration: none;">1. 개요</a></li><li style="margin-left: 20px;"><a href="#heading-go1xcz5ck" style="color: #0052cc; text-decoration: none;">1.1. 요약</a></li><li style="margin-left: 20px;"><a href="#heading-0u0cn9ez2" style="color: #0052cc; text-decoration: none;">1.2. 작성 배경</a></li><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-db5mtxsji" style="color: #172b4d; text-decoration: none;">2. '부탁 퀘스트'란?</a></li><li style="margin-left: 20px;"><a href="#heading-evtq9i2pn" style="color: #0052cc; text-decoration: none;">2.1. 용어 정의</a></li><li style="margin-left: 20px;"><a href="#heading-0wmdoj723" style="color: #0052cc; text-decoration: none;">2.2. 유저 시나리오 및 화면 구성 예시</a></li><li style="margin-left: 20px;"><a href="#heading-1pwmkw4s2" style="color: #0052cc; text-decoration: none;">2.3. 인터랙티브 프로토타입</a></li><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-alx6c37xa" style="color: #172b4d; text-decoration: none;">3. 컨텐츠 제공 방향성</a></li><li style="margin-left: 20px;"><a href="#heading-tw5a3sbta" style="color: #0052cc; text-decoration: none;">3.1. 캐릭터 교감 경험 강화</a></li><li style="margin-left: 20px;"><a href="#heading-b7k4qbcj7" style="color: #0052cc; text-decoration: none;">3.2. 분기 수집을 통한 반복 플레이 동기 제공</a></li><li style="margin-left: 20px;"><a href="#heading-q2nadb5ie" style="color: #0052cc; text-decoration: none;">3.3. 미보유 캐릭터 노출을 통한 획득 동기&nbsp;제공</a></li><li style="margin-left: 20px;"><a href="#heading-935qti6qz" style="color: #0052cc; text-decoration: none;">3.4. 후일담 스토리의 역할</a></li><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-9x1ge1vnu" style="color: #172b4d; text-decoration: none;">4. 시스템 세부사항</a></li><li style="margin-left: 20px;"><a href="#heading-715dv2xoq" style="color: #0052cc; text-decoration: none;">4.1. 부탁 등장 규칙</a></li><li style="margin-left: 20px;"><a href="#heading-la4pq2sxa" style="color: #0052cc; text-decoration: none;">4.2. 초기화&nbsp;과정</a></li><li style="margin-left: 20px;"><a href="#heading-vv1amr2l4" style="color: #0052cc; text-decoration: none;">4.3. 보상 지급 및 분기 클리어</a></li><li style="margin-left: 20px;"><a href="#heading-31k7tnk7m" style="color: #0052cc; text-decoration: none;">4.4. 데이터 구조 예시</a></li><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-xbd02738l" style="color: #172b4d; text-decoration: none;">5. 기존 시스템과의 연계 방향</a></li><li style="margin-left: 20px;"><a href="#heading-8e30jx9ju" style="color: #0052cc; text-decoration: none;">5.1. 스토리 감상 시스템과의&nbsp;연계</a></li><li style="margin-left: 20px;"><a href="#heading-7biwia9if" style="color: #0052cc; text-decoration: none;">5.2. 일일 미션 시스템과의 연계</a></li><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-gl4nh8v78" style="color: #172b4d; text-decoration: none;">6. 화면별 UI 세부 요소</a></li><li style="margin-left: 20px;"><a href="#heading-9jd9i3r6z" style="color: #0052cc; text-decoration: none;">6.1. 메인 로비 화면</a></li><li style="margin-left: 20px;"><a href="#heading-s7yj06yye" style="color: #0052cc; text-decoration: none;">6.2. 부탁 화면</a></li><li style="margin-left: 20px;"><a href="#heading-s7gez104t" style="color: #0052cc; text-decoration: none;">6.3. 부탁 팝업</a></li><li style="margin-left: 20px;"><a href="#heading-js4ruxx4u" style="color: #0052cc; text-decoration: none;">6.4. 후일담 스토리 해금 팝업</a></li><li style="font-weight: bold; margin-top: 10px;"><a href="#heading-m6abyh8hh" style="color: #172b4d; text-decoration: none;">7. 라이브서비스 운영 예시</a></li><li style="margin-left: 20px;"><a href="#heading-z3vlxi3ym" style="color: #0052cc; text-decoration: none;">7.1. 특정 캐릭터의 부탁 노출 강화</a></li><li style="margin-left: 20px;"><a href="#heading-mu7ieij2v" style="color: #0052cc; text-decoration: none;">7.2. 기간 한정 부탁</a></li></ul></div><p><br></p><br>
+        <h1 style="font-size: 28px; color: rgb(0, 0, 0);" id="heading-qhx86g4lv" data-prefix="1. "><a href="#dynamic-toc" class="toc-backlink"></a>개요</h1><div><hr id="null"></div><h2 style="font-size: 22px; color: rgb(7, 71, 166);" data-prefix="1.1. " id="heading-go1xcz5ck"><a href="#dynamic-toc" class="toc-backlink">요약<br></a></h2>
+        <hr>
+        <p class="isSelectedEnd">본 문서는 라이브 서비스형 수집 RPG에서 반복적으로 수행되는 일일 퀘스트에 캐릭터 교감 요소와 분기 수집 구조를 결합한 <strong>부탁 콘텐츠 시스템</strong>을 제안합니다.</p><p class="isSelectedEnd">부탁 콘텐츠는 매일 일정 수의 캐릭터 부탁을 유저에게 제시하고, 유저가 그중 하나를 선택해 해결 방안을 고르는 방식으로 진행됩니다. 선택한 해결 방안은 각각 다른 부탁 분기 퀘스트로 이어지며, 유저는 여러 날에 걸쳐 각 분기를 수집할 수 있습니다.</p><p class="isSelectedEnd">이를 통해 기존 일일 퀘스트가 가진 반복 피로도를 줄이고, 매일의 접속 루틴 안에서 캐릭터와의 짧은 교감, 분기 수집, 후일담 해금이라는 추가 목표를 제공합니다.</p><p>본 문서에서는 부탁 콘텐츠의 기본 구조, 일일 부탁 목록 생성 규칙, 분기 클리어 처리, 기존 시스템과의 연계 방향, 주요 UI 흐름을 정의합니다.</p><p><br></p><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166);" data-prefix="1.2. " id="heading-0u0cn9ez2"><a href="#dynamic-toc" class="toc-backlink">작성 배경</a></h2><div></div><p><hr id="null"></p><p class="isSelectedEnd">라이브 서비스형 RPG에서 일일 퀘스트는 유저의 접속 루틴을 유지하는 중요한 장치입니다.</p><p class="isSelectedEnd">그러나 많은 일일 퀘스트는 반복적인 목표와 정형화된 보상 구조로 인해 시간이 지날수록 숙제처럼 인식되기 쉽습니다.</p><p class="isSelectedEnd"><br></p><p class="isSelectedEnd">특히 수집형 RPG에서는 캐릭터에 대한 관심과 애정이 장기 플레이 동기와 수집 동기에 큰 영향을 줍니다.&nbsp;</p><p class="isSelectedEnd">그럼에도 일일 퀘스트는 대체로 재화 획득 중심으로 구성되어 있어, 캐릭터의 매력을 매일의 플레이 루틴 안에서 충분히 활용하지 못하는 경우가 많습니다.</p><p>본 제안은 일일 퀘스트의 반복 구조는 유지하되, 그 안에 캐릭터가 직접 부탁을 전달하고 유저가 해결 방안을 선택하는 흐름을 추가하는 것을 목표로 합니다.&nbsp;</p><p>이를 통해 일일 퀘스트를 단순한 보상 획득 수단이 아니라, 캐릭터와 세계관을 짧게 경험하는 반복 접점으로 확장하고자 합니다.</p>
+
+        <!-- ================================================================================= -->
+        <!-- 2. '일일 교감 퀘스트 시스템'이란? (제목1 전 줄바꿈 3번) -->
+        <!-- ================================================================================= -->
+        <br><br><br>
+        <h1 style="font-size: 28px; color: rgb(0, 0, 0);" data-prefix="2. " id="heading-db5mtxsji"><a href="#dynamic-toc" class="toc-backlink">'부탁 퀘스트'란?</a></h1><div><hr id="null"></div><div style="margin: 30px 0; padding: 20px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px;"><div class="mermaid">graph LR
+                            %% 스타일 정의
+                            classDef step fill:#f4f5f7,stroke:#cbd5e1,stroke-width:2px,color:#000;
+                            classDef choice fill:#deebff,stroke:#0052cc,stroke-width:2px,color:#000;
+                            classDef quest fill:#fffaf0,stroke:#de7b00,stroke-width:2px,color:#000;
+                            classDef reward fill:#e6f6ee,stroke:#36b37e,stroke-width:2px,color:#36b37e;
+                            classDef archive fill:#fce4d6,stroke:#de350b,stroke-width:2px,color:#000;
+
+                            A[매일 랜덤한 <b>부탁</b> 발생]:::step --&gt; B(원하는 <b>부탁</b> 선택):::step
+                            B --&gt; C{<b>매일 1가지 해결방안 선택 가능</b>}:::choice
+                            
+                            %% 분기 루프 (즉시 보상)
+                            C --&gt; D1[부탁 분기 퀘스트 A]:::quest
+                            C --&gt; D2[부탁 분기 퀘스트 B]:::quest
+                            C --&gt; D3[부탁 분기 퀘스트 C]:::quest
+                            
+                            D1 --&gt; G1[<b>퀘스트 보상 지급 </b><br> 분기 클리어 기록]:::reward
+                            D2 --&gt; G2[<b>퀘스트 보상 지급 </b><br> 분기 클리어 기록]:::reward
+                            D3 --&gt; G3[<b>퀘스트 보상 지급 </b><br> 분기 클리어 기록]:::reward
+                            
+                            %% 데이터 누적 루프 (서사 해금)
+                            G1 -.-&gt; H[<b>모든 부탁 분기 퀘스트 1회 이상 클리어</b>]:::archive
+                            G2 -.-&gt; H
+                            G3 -.-&gt; H
+                            
+                            H --&gt; F([최종 달성 보상<br><b>부탁 후일담 스토리</b> 해금]):::final
+                    </div>
+                </div><table class="image-placeholder-table">
+            <tbody><tr>
+                
+
+                <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+                <script>
+                    mermaid.initialize({ startOnLoad: true });
+                </script>
+            </tr>
+        </tbody></table>
+        
+        <p>부탁 퀘스트는 매일 무작위로 등장한 캐릭터의 부탁을 확인하고, 유저가 원하는 부탁과 해결 방안을 선택해 수행하는 일일형 퀘스트 콘텐츠입니다.</p><p>각 부탁은 캐릭터가 처한 상황과 여러 해결 방안으로 구성되며, 선택한 해결 방안에 따라 서로 다른 부탁 분기 퀘스트가 제공됩니다.</p><p>각 분기 퀘스트를 클리어하면 해당 분기의 클리어 기록이 저장되며, 하나의 부탁에 포함된 모든 분기를 1회 이상 클리어하면 부탁 후일담 스토리가 해금됩니다.</p>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <br><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="2.1. " id="heading-evtq9i2pn"><a href="#dynamic-toc" class="toc-backlink">용어 정의<br></a></h2>
+        <hr>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;">용어</th>
+                    <th style="width: 1200px;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>부탁 콘텐츠</strong></td>
+                    <td>매일 등장하는 캐릭터의 부탁을 선택하고 수행하는 일일형 교감 퀘스트 시스템입니다.</td>
+                </tr><tr>
+                    <td><b>일일 부탁 목록</b></td>
+                    <td>공통 일일 초기화 시점에 생성되는 부탁 목록입니다. 유저는 이 목록에서 수행할 부탁을 선택합니다.</td>
+                </tr>
+                <tr>
+                    <td><strong>부탁</strong></td>
+                    <td>특정 캐릭터가 유저에게 전달하는 요청 단위입니다. <br>캐릭터의 상황 설명과 여러 해결 방안으로 구성됩니다.</td>
+                </tr><tr>
+                    <td><b>해결 방안</b></td>
+                    <td>부탁에 대해 유저가 선택할 수 있는 선택지입니다. 각 해결 방안은 하나의 부탁 분기 퀘스트와 연결됩니다.</td>
+                </tr>
+                <tr>
+                    <td><strong>부탁 분기 퀘스트</strong></td>
+                    <td>선택한 해결 방안에 따라 제공되는 실제 수행 퀘스트입니다.</td>
+                </tr>
+                <tr>
+                    <td><strong>부탁 후일담 스토리</strong></td>
+                    <td>하나의 부탁에 포함된 모든 분기 퀘스트를 1회 이상 클리어했을 때 해금되는 보상형 스토리입니다.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <br><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="2.2. " id="heading-0wmdoj723"><a href="#dynamic-toc" class="toc-backlink">유저 시나리오 및 화면 구성 예시<br></a></h2>
+        <hr>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;">과정</th>
+                    <th style="width: 500px;">화면 구성 예시</th>
+                    <th style="width: 700px;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>일일 부탁 갱신</b></td>
+                    <td>-</td>
+                    <td><div>일일 초기화 시점에 일일 부탁 목록이 생성됩니다.</div><div><ul><li>미보유 캐릭터의 부탁도 등장할 수 있습니다.</li><ul><li><a href="#heading-715dv2xoq" style="color: rgb(0, 82, 204); font-weight: bold;">4.1. 부탁 등장 규칙</a> 참고</li></ul></ul></div></td>
+                </tr><tr>
+                    <td><strong>'부탁' 진입</strong></td>
+                    <td><a href="https://i.imgur.com/7MdPAS9.jpeg" target="_blank"><img src="https://i.imgur.com/7MdPAS9.jpeg" style="max-width: 100%; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px;"></a></td>
+                    <td><ul><li>로비 화면에서 '부탁' 버튼을 눌러 화면에 진입할 수 있습니다.</li><ul><li>버튼의 레드닷 규칙은 <a href="#heading-ixst9turn" style="color: rgb(0, 82, 204); font-weight: bold;">6.1.1. '부탁' 진입 버튼의 레드닷 표시 규칙</a> 참고</li></ul><li>'부탁 분기 퀘스트'의 진행 상태에 따른 예외 처리가 존재합니다.</li><ul><li>&nbsp;&nbsp;<a href="#heading-u1t0vzsxe" style="color: rgb(0, 82, 204); font-weight: bold;">6.2.2. 상황별 부탁 화면 진입 과정</a> 참고</li></ul></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>'부탁' 선택</strong></td>
+                    <td><a href="https://i.imgur.com/zmGwiSD.jpeg" target="_blank"><img src="https://i.imgur.com/zmGwiSD.jpeg" style="max-width: 100%; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td><ul><li>'부탁' 화면에서는, 매일 랜덤하게 방문한 n명의 캐릭터 중 하나를 선택할 수 있습니다.</li><li>일일 부탁 목록에서 수행할 부탁을 선택합니다.</li><li>캐릭터 카드를 선택하면 화면 전환 없이 '부탁 팝업'이 출력됩니다.</li><ul><li><a href="#heading-lv6wlbycd" style="color: rgb(0, 82, 204); font-weight: bold;">6.2.1. 캐릭터 카드 UI 구성 요소</a>&nbsp;참고</li></ul></ul></td>
+                </tr>
+                <tr>
+                    <td><b>해결 방안 선택</b></td>
+                    <td><a href="https://i.imgur.com/tFMsEJt.jpeg" target="_blank"><img src="https://i.imgur.com/tFMsEJt.jpeg" style="max-width: 100%; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td><ul><li>'부탁 팝업'에서는 캐릭터가 겪은 문제 상황을 확인하고 <b>해결 방안</b>을 선택할 수 있습니다.</li><ul><li>부탁에 대응하는 '부탁 대사'가 출력됩니다.</li></ul><li>해결 방안 중 하나를 선택해 부탁 분기 퀘스트를 수령합니다.</li><li>세부 사항은&nbsp;<a href="#heading-9yyyedwy1" style="color: rgb(0, 82, 204); font-weight: bold;">6.3.2. 팝업 UI 구성 요소/ 부탁 분기 퀘스트 선택 단계</a>&nbsp;참고</li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>퀘스트 수령</strong></td>
+                    <td><a href="https://i.imgur.com/wjCfMJO.jpeg" target="_blank"><img src="https://i.imgur.com/wjCfMJO.jpeg" style="max-width: 100%; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td><ul><li>퀘스트 수령 시 UI 구성이 변경되며, 선택한 해결 방안에 대응하는 '수령 대사'가 출력됩니다.</li><li>세부 사항은&nbsp;<a href="#heading-y7cf81e40" style="color: rgb(0, 82, 204); font-weight: bold;">6.3.3. 팝업 UI 구성 요소/ 부탁 분기 퀘스트 수령 상태</a>&nbsp;참고</li><li>한 번 수령하면 완료 전까지 선택 퀘스트를 변경할 수 없습니다.</li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>퀘스트 완료</strong></td>
+                    <td><a href="https://i.imgur.com/Hok5AL8.jpeg" target="_blank"><img src="https://i.imgur.com/Hok5AL8.jpeg" style="max-width: 100%; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td><ul><li>퀘스트 목표 조건을 모두 충족한 뒤, '부탁' 화면에 진입해 보상을 수령할 수 있습니다.</li><ul><li>퀘스트에 대응하는 '완료 대사'가 출력됩니다</li><li>UI 세부 사항은&nbsp;<a href="#heading-blwr0ovio" style="color: rgb(0, 82, 204); font-weight: bold;">6.3.4. 팝업 UI 구성 요소/ 부탁 분기 퀘스트 완료 상태</a>&nbsp;참고</li><li>보상 처리에 대한 세부 사항은&nbsp;<a href="#heading-vv1amr2l4" style="color: rgb(0, 82, 204); font-weight: bold;">4.3. 보상 지급 및 분기 클리어</a>&nbsp;참고</li></ul></ul></td>
+                </tr>
+                <tr>
+                    <td><b>후일담 해금</b></td>
+                    <td><a href="https://i.imgur.com/R3ST5ue.jpeg" target="_blank"><img src="https://i.imgur.com/R3ST5ue.jpeg" style="max-width: 100%; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td><ul><li>모든 분기를 1회 이상 클리어하면 부탁 후일담 스토리가 해금됩니다.</li><ul><li>UI 세부사항에 대해서는&nbsp;<a href="#heading-js4ruxx4u" style="color: rgb(0, 82, 204); font-weight: bold;">6.4. '부탁 후일담 스토리 해금' 팝업</a>&nbsp;참고</li><li>후일담 스토리 컨텐츠에 대해서는<a href="#heading-935qti6qz" style="color: rgb(0, 82, 204); font-weight: bold;">&nbsp;3.4. 후일담 스토리의 역할</a>&nbsp;참고</li></ul></ul></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <br><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="2.3. " id="heading-1pwmkw4s2"><a href="#dynamic-toc" class="toc-backlink">인터랙티브 프로토타입<br></a></h2>
+        <hr>
+        <p>해당 시스템의 전체적인 명세를 확인할 수 있는, 상호작용 가능한 프로토타입입니다.</p><p>UI 요소를 클릭해 시연 가능합니다.</p><p><br></p><!-- ========================================== -->
+<!-- 인터랙티브 프로토타입 시작 -->
+<!-- ========================================== -->
+<style>
+    /* 프로토타입 전용 스타일 */
+    .simulator-dashboard { width: 860px; background: #ebecf0; border: 1px solid #c1c7d0; border-radius: 8px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; margin-bottom: 20px; font-family: sans-serif; }
+    .device-screen { width: 860px; height: 520px; background: #ffffff; border: 4px solid #97a0af; border-radius: 16px; position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); box-sizing: border-box; margin: 20px 0; font-family: sans-serif; color: #000; }
+    .game-view { width: 100%; height: 100%; padding: 25px; box-sizing: border-box; display: none; position: absolute; top: 0; left: 0; overflow-y: auto; background-color: #f4f5f7; }
+    .game-view.active { display: block; }
+    
+    .btn { padding: 10px 20px; font-size: 13px; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; transition: background 0.2s; }
+    .btn-blue { background: #0052cc; color: white; }
+    .btn-blue:hover { background: #0065ff; }
+    .btn-blue:disabled { background: #a5adba; cursor: not-allowed; }
+    .btn-green { background: #36b37e; color: white; }
+    .btn-gray { background: #6b778c; color: white; }
+    .btn-gray:hover { background: #4c566a; }
+    .btn-amber { background: #de7b00; color: white; }
+
+    .noti-dot { width: 8px; height: 8px; background: #de350b; border-radius: 50%; display: inline-block; margin-left: 4px; vertical-align: middle; }
+    
+    /* 캐릭터 카드 */
+    .schedule-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .char-card { background: #ffffff; border: 1px solid #cbd5e1; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; position: relative; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+    .char-card.locked { background: #f4f5f7; opacity: 0.6; }
+    .char-portrait { font-size: 40px; margin: 5px 0; }
+    .req-name { font-size: 12px; color: #6b778c; font-weight: bold; }
+    .char-name { font-size: 15px; font-weight: bold; color: #172b4d; margin-bottom: 5px; }
+    .prog-label { font-size: 11px; background: #ebecf0; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
+    .prog-label.clear { background: #e6f6ee; color: #36b37e; }
+    .reward-info { font-size: 10px; color: #de7b00; background: #fffaf0; padding: 4px; border-radius: 4px; width: 100%; box-sizing: border-box; }
+    .all-clear-badge { position: absolute; top: 6px; right: 6px; font-size: 9px; background: #36b37e; color: white; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
+
+    /* 스토리 모드 */
+    .story-list { display: flex; flex-direction: column; gap: 12px; padding-bottom: 20px; }
+    .story-card { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+    .story-card.locked { background: #f4f5f7; border: 1px dashed #cbd5e1; }
+    .story-card.locked .story-meta-left, .story-card.locked .story-reward-zone { opacity: 0.3; }
+    .story-card.locked .btn-container-right { display: none; /* 잠금 상태일 때 버튼 영역 숨김 처리 */ }
+    .story-meta-left { display: flex; align-items: center; gap: 15px; width: 50%; }
+    .story-char-badge { font-size: 24px; background: #ffffff; padding: 6px; border-radius: 50%; border: 1px solid #cbd5e1; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .story-info-text { display: flex; flex-direction: column; gap: 4px; }
+    .story-card-title { font-size: 15px; font-weight: bold; color: #172b4d; }
+    .story-card-desc { font-size: 12px; color: #6b778c; }
+    .story-reward-zone { display: flex; flex-direction: column; align-items: center; font-size: 11px; color: #6b778c; width: 120px; }
+    .reward-item-box { font-size: 14px; font-weight: bold; color: #172b4d; margin-bottom: 2px; }
+    .btn-container-right { display: flex; align-items: center; gap: 8px; z-index: 2; }
+    .lock-overlay { position: absolute; right: 20px; color: #de350b; font-weight: bold; font-size: 13px; z-index: 1; }
+
+    /* 팝업 UI */
+    .popup-backdrop { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 30, 66, 0.6); display: none; justify-content: center; align-items: center; z-index: 10; }
+    .popup-panel { width: 740px; background: #ffffff; border: 1px solid #97a0af; border-radius: 12px; padding: 20px; box-sizing: border-box; box-shadow: 0 8px 24px rgba(9,30,66,0.15); display: flex; flex-direction: column; }
+    .panel-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #cbd5e1; padding-bottom: 12px; margin-bottom: 15px; }
+    .panel-body { display: flex; gap: 20px; }
+    .panel-left { width: 40%; display: flex; flex-direction: column; gap: 10px; }
+    .panel-right { width: 60%; display: flex; flex-direction: column; gap: 10px; justify-content: space-between; }
+    
+    .spine-placeholder { height: 160px; background: #f4f5f7; border-radius: 8px; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .dialogue-box { background: #ebecf0; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.5; color: #172b4d; position: relative; border-left: 3px solid #0052cc; }
+    
+    .branch-item { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 13px; background: #ffffff; cursor: pointer; transition: all 0.2s; }
+    .branch-item.completed { background: #f4f5f7; }
+    .branch-item.focused { background: #deebff; border-color: #0052cc; font-weight: bold; }
+    .branch-item.fixed { background: #fffaf0; border-color: #de7b00; cursor: default; border-left: 4px solid #de7b00; }
+    
+    .spec-display { background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 6px; font-size: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .spec-row { display: flex; justify-content: space-between; align-items: center; }
+    .spec-title { color: #6b778c; font-weight: bold; }
+    .spec-val { color: #172b4d; font-weight: bold; text-align: right; }
+    
+    .panel-footer { display: flex; justify-content: flex-end; margin-top: 15px; border-top: 1px solid #cbd5e1; padding-top: 12px; gap: 10px; }
+</style>
+
+<div class="simulator-dashboard">
+    <div>
+        <div style="font-size: 14px; font-weight: bold; color: #0052cc;" id="dashStep">Step 1. 메인 로비 대기 상태</div>
+        <div id="dashDesc" style="font-size:13px; margin:4px 0 0 0; color:#333; font-weight: bold;">[부탁] 버튼의 레드닷을 확인하고 진입하세요.</div>
+    </div>
+    <button class="btn btn-gray" onclick="resetPrototype()">시뮬레이션 초기화</button>
+</div>
+
+<div class="device-screen">
+    <!-- VIEW 1: 메인 로비 -->
+    <div class="game-view active" id="viewLobby" style="background: linear-gradient(135deg, #e3e8f0, #f4f5f7);">
+        <div style="font-size: 14px; color: #6b778c; font-weight: bold; display: flex; justify-content: space-between;">
+            <span>[ 메인 로비 화면 ]</span>
+            <!-- 퀘스트 진행중일 때 필드 완료를 시뮬레이션 하는 버튼 -->
+            <button class="btn btn-green" id="lobbyCompleteBtn" style="display:none; padding: 6px 14px;" onclick="executeShortcutFlow()">인게임 퀘스트 목표 달성(시뮬레이션)</button>
+        </div>
+        
+        <div style="position: absolute; right: 24px; bottom: 24px; display: flex; gap: 12px; align-items: flex-end;">
+            <button class="btn btn-gray" style="padding: 14px 24px;" onclick="changeView('viewStoryArchive', '스토리 모드', '기존에 구현된 스토리 보관소 시스템입니다.')">스토리 모드</button>
+            <button class="btn btn-gray" style="padding: 14px 24px;" onclick="changeView('viewMissions', '일일 미션 리스트', '일일 미션 연동 상태를 확인합니다.')">일일 미션</button>
+            <button class="btn btn-blue" style="padding: 14px 28px; font-size: 15px;" onclick="enterBoard()">
+                부탁 <span class="noti-dot" id="lobbyRedDot"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- VIEW 2: 부탁 선택 화면 -->
+    <div class="game-view" id="viewBoard">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #cbd5e1; padding-bottom:10px; margin-bottom:20px;">
+            <div style="font-size:18px; font-weight:bold; color: #172b4d;">일일 부탁 목록</div>
+            <button class="btn btn-gray" style="padding: 6px 12px;" onclick="changeView('viewLobby', '메인 로비', '로비로 돌아왔습니다.')">로비로 가기</button>
+        </div>
+        
+        <div class="schedule-grid">
+            <!-- 타깃 캐릭터 카드 (진행도 2/3으로 설정하여 이번에 클리어시 후일담 해금) -->
+            <div class="char-card" onclick="openAffinityPopup('popupStep3', '해결 방안 선택', '원하는 해결 방안을 선택하고 퀘스트를 수령하세요.')">
+                <div class="req-name">장비 수리 부탁</div>
+                <div class="char-portrait">👩‍⚕️</div>
+                <div class="char-name">히비키</div>
+                <div class="prog-label">진행도 2 / 3</div>
+                <div class="reward-info">모든 분기 클리어 시<br>[히비키 후일담] 해금</div>
+            </div>
+            
+            <div class="char-card locked" onclick="alert('테스트를 위해 히비키 카드를 선택해 주세요.')">
+                <div class="req-name">업무 지원 요청</div>
+                <div class="char-portrait">👩‍⚖️</div>
+                <div class="char-name">유우카</div>
+                <div class="prog-label">진행도 0 / 3</div>
+                <div class="reward-info">모든 분기 클리어 시<br>[유우카 후일담] 해금</div>
+            </div>
+            
+            <div class="char-card locked" style="opacity:1; border-color:#36b37e;">
+                <div class="all-clear-badge">ALL CLEAR</div>
+                <div class="req-name">흥신소 의뢰</div>
+                <div class="char-portrait">👩‍💼</div>
+                <div class="char-name" style="color:#36b37e;">아루</div>
+                <div class="prog-label clear">진행도 3 / 3</div>
+                <div class="reward-info" style="background:#e6f6ee; color:#36b37e;">후일담 스토리 해금 완료</div>
+            </div>
+            
+            <div class="char-card locked" onclick="alert('테스트를 위해 히비키 카드를 선택해 주세요.')">
+                <div class="req-name">라이딩 파트너</div>
+                <div class="char-portrait">👩‍🌾</div>
+                <div class="char-name">시로코</div>
+                <div class="prog-label">진행도 1 / 3</div>
+                <div class="reward-info">모든 분기 클리어 시<br>[시로코 후일담] 해금</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 3: 일일 미션 리스트 -->
+    <div class="game-view" id="viewMissions">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #cbd5e1; padding-bottom:10px; margin-bottom:20px;">
+            <div style="font-size:18px; font-weight:bold; color:#172b4d;">일일 미션 리스트</div>
+            <button class="btn btn-gray" style="padding: 6px 12px;" onclick="changeView('viewLobby', '메인 로비', '')">로비로 가기</button>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+            <!-- 수령 전 배너 -->
+            <div id="missionSlot_none" style="background:#ffffff; border:1px dashed #cbd5e1; padding:15px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; opacity:0.8;">
+                <div>
+                    <span style="font-size:11px; background:#6b778c; color:white; padding:3px 6px; border-radius:4px;">부탁 연동</span>
+                    <div style="font-size:14px; font-weight:bold; margin-top:6px; color:#172b4d;">부탁 화면을 통해 퀘스트를 수령하실 수 있습니다.</div>
+                </div>
+                <button class="btn btn-blue" onclick="changeView('viewBoard', '부탁 화면', '수령할 부탁을 선택하세요.')">바로가기</button>
+            </div>
+
+            <!-- 진행중 / 완료대기 배너 -->
+            <div id="missionSlot_active" style="background:#fffaf0; border:1px solid #de7b00; padding:15px; border-radius:8px; display:none; justify-content:space-between; align-items:center;">
+                <div>
+                    <span style="font-size:11px; background:#de7b00; color:white; padding:3px 6px; border-radius:4px;" id="missionBadge">부탁 진행중</span>
+                    <div style="font-size:14px; font-weight:bold; margin-top:6px; color:#172b4d;">특별의뢰 3회 완료 <span id="missionProgTxt" style="color:#6b778c; font-weight:normal;">( 0 / 3 )</span></div>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <button class="btn btn-gray" style="padding:8px 14px;" onclick="enterBoard()">부탁 확인</button>
+                </div>
+            </div>
+
+            <!-- 기본 미션 -->
+            <div style="background:#ffffff; border:1px solid #cbd5e1; padding:15px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span style="font-size:11px; background:#0052cc; color:white; padding:3px 6px; border-radius:4px;">일반 미션</span>
+                    <div style="font-size:14px; font-weight:bold; margin-top:6px; color:#172b4d;">AP 100 소모하기 <span style="color:#6b778c; font-weight:normal;">( 40 / 100 )</span></div>
+                </div>
+                <button class="btn btn-gray" style="padding:8px 14px;">바로가기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 4: 스토리 모드 보관소 -->
+    <div class="game-view" id="viewStoryArchive">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #cbd5e1; padding-bottom:10px; margin-bottom:20px;">
+            <div style="font-size:18px; font-weight:bold; color:#172b4d;">스토리 모드 보관소</div>
+            <button class="btn btn-gray" style="padding: 6px 12px;" onclick="changeView('viewLobby', '메인 로비', '')">로비로 가기</button>
+        </div>
+        <div class="story-list">
+            <!-- 아루: 이미 감상 완료 -->
+            <div class="story-card" style="border-color: #cbd5e1;">
+                <div class="story-meta-left">
+                    <div class="story-char-badge" style="border-color: #cbd5e1;">👩‍💼</div>
+                    <div class="story-info-text">
+                        <span class="story-card-title">아루 부탁 후일담 스토리</span>
+                        <span class="story-card-desc">이미 모든 부탁 분기를 수집 완료하여 개방된 에피소드입니다.</span>
+                    </div>
+                </div>
+                <div class="story-reward-zone">
+                    <div class="reward-item-box">💎 x 50</div>
+                    <span style="color:#36b37e; font-weight:bold;">수령 완료</span>
+                </div>
+                <div class="btn-container-right">
+                    <button class="btn btn-gray" style="padding: 8px 16px;">다시보기</button>
+                </div>
+            </div>
+
+            <!-- 히비키: 해금 전/후 타깃 -->
+            <div class="story-card locked" id="storyHibikiSlot">
+                <div class="story-meta-left">
+                    <div class="story-char-badge">👩‍⚕️</div>
+                    <div class="story-info-text">
+                        <span class="story-card-title">히비키 부탁 후일담 스토리</span>
+                        <span class="story-card-desc">히비키의 3가지 부탁 분기를 모두 클리어하면 해금됩니다.</span>
+                    </div>
+                </div>
+                <div class="story-reward-zone">
+                    <div class="reward-item-box" style="opacity:0.6;">🎁 한정 보상</div>
+                    <span id="hibikiRewardState" style="color:#6b778c; font-weight:bold;">초회 청휘석</span>
+                </div>
+                <div class="btn-container-right">
+                    <span class="story-red-dot" id="hibikiRedDot" style="display:none;"></span>
+                    <button class="btn btn-blue" id="hibikiReadBtn" onclick="readHibikiStory()" style="padding: 8px 16px;">감상하기</button>
+                </div>
+                <div class="lock-overlay" id="hibikiLockLabel">🔒 부탁 분기 퀘스트 클리어 필요</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUPS -->
+    <!-- 팝업 1: 부탁 팝업 (미수령) -->
+    <div class="popup-backdrop" id="popupStep3" onclick="if(event.target === this) closeAffinityPopup('popupStep3')">
+        <div class="popup-panel">
+            <div class="panel-header">
+                <div>
+                    <span style="font-size: 18px; font-weight: bold; color:#172b4d;">네코즈카 히비키</span>
+                    <span style="font-size: 11px; background: #ebecf0; padding: 3px 8px; border-radius: 4px; margin-left: 8px; color:#172b4d;">엔지니어부</span>
+                </div>
+                <div style="font-size: 13px; color: #6b778c; font-weight:bold;">진행도 <span style="color:#0052cc;">2 / 3</span></div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-left">
+                    <div class="spine-placeholder">👩‍⚕️</div>
+                    <div class="dialogue-box">"장비가 고장 나서 실험을 계속할 수 없어... 아주 잠깐만 나 좀 도와줄 수 있을까?"</div>
+                </div>
+                <div class="panel-right">
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <div class="branch-item completed" onclick="alert('원활한 진행을 위해 다른 해결 방안을 선택해주세요.')">
+                            <span>✅</span> <span>"고장 난 부품을 새로 만들어 줄게"</span>
+                        </div>
+                        <div class="branch-item" id="hibikiTargetBranch" onclick="selectValidBranch(this)">
+                            <span>⬜</span> <span>"동아리 예산을 더 따내 보자"</span>
+                        </div>
+                        <div class="branch-item completed" onclick="alert('원활한 진행을 위해 다른 해결 방안을 선택해주세요.')">
+                            <span>✅</span> <span>"장비를 빌려줄 만한 학생을 찾아보자"</span>
+                        </div>
+                    </div>
+                    
+                    <div class="spec-display">
+                        <div class="spec-row">
+                            <span class="spec-title">퀘스트 목표</span>
+                            <span class="spec-val" id="popupTargetTxt" style="color:#6b778c; font-weight:normal;">해결 방안을 선택해주세요</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-title">클리어 보상</span>
+                            <span class="spec-val" id="popupRewardTxt" style="color:#6b778c; font-weight:normal;">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-blue" id="popupSubmitBtn" disabled="" onclick="acceptAffinityQuest()">수령하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 팝업 2: 부탁 팝업 (진행중) -->
+    <div class="popup-backdrop" id="popupStep4" onclick="if(event.target === this) closeAffinityPopup('popupStep4')">
+        <div class="popup-panel" style="border-color: #de7b00; border-width: 2px;">
+            <div class="panel-header">
+                <div>
+                    <span style="font-size: 15px; font-weight: bold; color: #de7b00; background:#fffaf0; padding:3px 8px; border-radius:4px; margin-right:8px;">진행중</span>
+                    <span style="font-size: 18px; font-weight: bold; color:#172b4d;">네코즈카 히비키</span>
+                </div>
+                <button style="background:none; border:none; font-size:24px; cursor:pointer; color:#6b778c;" onclick="closeAffinityPopup('popupStep4')">×</button>
+            </div>
+            <div class="panel-body">
+                <div class="panel-left">
+                    <div class="spine-placeholder" style="opacity:0.9;">👩‍⚕️</div>
+                    <div class="dialogue-box" style="border-left-color:#de7b00; background:#fffaf0;">"예산 심의 서류라면 여기 정리해 뒀어. 잘 부탁해, 선생님!"</div>
+                </div>
+                <div class="panel-right">
+                    <div class="branch-item fixed">
+                        <span>▶</span> <span style="font-weight: bold; color: #de7b00;">"동아리 예산을 더 따내 보자"</span>
+                    </div>
+                    <div class="spec-display" style="border-color: #de7b00; background:#ffffff;">
+                        <div class="spec-row">
+                            <span class="spec-title">퀘스트 목표</span>
+                            <span class="spec-val" style="color:#0052cc;">특별의뢰 3회 완료</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-title">클리어 보상</span>
+                            <span class="spec-val">💎 40, 🪙 10k</span>
+                        </div>
+                    </div>
+                    <div style="flex-grow:1;"></div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-amber" onclick="executeShortcutFlow()">바로가기 (목표 수행)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 팝업 3: 부탁 팝업 (완료대기/정산) -->
+    <div class="popup-backdrop" id="popupStep5">
+        <div class="popup-panel" style="border-color: #36b37e; border-width: 2px;">
+            <div class="panel-header">
+                <div>
+                    <span style="font-size: 15px; font-weight: bold; color: #36b37e; background:#e6f6ee; padding:3px 8px; border-radius:4px; margin-right:8px;">목표 달성</span>
+                    <span style="font-size: 18px; font-weight: bold; color:#172b4d;">네코즈카 히비키</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-left">
+                    <div class="spine-placeholder">👩‍⚕️</div>
+                    <div class="dialogue-box" style="border-left-color:#36b37e; background:#e6f6ee;">"덕분에 예산을 충분히 모을 수 있었어. 고마워, 선생님!"</div>
+                </div>
+                <div class="panel-right" style="justify-content: center; align-items:center;">
+                    <div style="font-size: 14px; color: #172b4d; font-weight:bold; margin-bottom: 15px;">퀘스트 보상 획득</div>
+                    <div style="display:flex; gap:15px; justify-content:center;">
+                        <div style="width:70px; height:70px; background:#f4f5f7; border:1px solid #cbd5e1; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:13px; border-radius:8px; font-weight:bold; color:#172b4d;"><div>💎</div><div style="margin-top:4px;">x 40</div></div>
+                        <div style="width:70px; height:70px; background:#f4f5f7; border:1px solid #cbd5e1; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:13px; border-radius:8px; font-weight:bold; color:#172b4d;"><div>🪙</div><div style="margin-top:4px;">x 10k</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-green" onclick="triggerAllClearReward()">완료하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 팝업 4: 후일담 해금 팝업 -->
+    <div class="popup-backdrop" id="popupStep6">
+        <div class="popup-panel" style="width: 500px; text-align:center; padding:30px;">
+            <div style="font-size: 40px; margin-bottom:10px;">🔓</div>
+            <h3 style="margin: 0 0 10px 0; font-size: 20px; color:#172b4d;">히비키 후일담 해금 완료!</h3>
+            <p style="font-size: 14px; color: #6b778c; margin-bottom: 25px; line-height:1.5;">히비키의 부탁 분기 퀘스트를 모두 공략했습니다.<br>스토리 보관소에서 특별한 후일담을 감상하세요.</p>
+            <div style="display:flex; justify-content:center; gap:15px;">
+                <button class="btn btn-gray" onclick="closeAffinityPopup('popupStep6'); changeView('viewLobby', '메인 로비', '로비로 복귀했습니다.')">닫기</button>
+                <button class="btn btn-blue" onclick="closeAffinityPopup('popupStep6'); changeView('viewStoryArchive', '스토리 보관소', '해금된 스토리를 확인하세요.')">스토리 감상하러 가기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // State variables
+    let questState = 'none'; // 'none', 'accepted', 'completed', 'claimed'
+    let hibikiProgress = 2; // 2/3 progress initially
+
+    function changeView(viewId, stepTitle, stepDescription) {
+        document.querySelectorAll('.game-view').forEach(v => v.classList.remove('active'));
+        document.getElementById(viewId).classList.add('active');
+        
+        if (stepTitle) document.getElementById('dashStep').innerText = "현재 화면: " + stepTitle;
+        if (stepDescription) document.getElementById('dashDesc').innerText = stepDescription;
+        
+        updateRedDots();
+    }
+
+    function enterBoard() {
+        if (questState === 'none') {
+            changeView('viewBoard', '일일 부탁 목록', '원하는 부탁을 선택하세요.');
+        } else if (questState === 'accepted') {
+            changeView('viewBoard', '일일 부탁 목록 (진행중)', '진행중인 부탁 팝업이 호출됩니다.');
+            openAffinityPopup('popupStep4');
+        } else if (questState === 'completed') {
+            changeView('viewBoard', '일일 부탁 목록 (완료대기)', '퀘스트 완료 팝업이 호출됩니다.');
+            openAffinityPopup('popupStep5');
+        } else if (questState === 'claimed') {
+            changeView('viewBoard', '일일 부탁 목록 (수행완료)', '오늘의 부탁을 모두 완료했습니다.');
+        }
+    }
+
+    function openAffinityPopup(popupId, stepTitle, stepDescription) {
+        document.getElementById(popupId).style.display = 'flex';
+        if (stepTitle) document.getElementById('dashStep').innerText = "팝업: " + stepTitle;
+        if (stepDescription) document.getElementById('dashDesc').innerText = stepDescription;
+    }
+
+    function closeAffinityPopup(popupId) {
+        document.getElementById(popupId).style.display = 'none';
+    }
+
+    function selectValidBranch(element) {
+        document.querySelectorAll('.branch-item').forEach(el => el.classList.remove('focused'));
+        
+        document.getElementById('popupTargetTxt').innerText = "특별의뢰 3회 완료";
+        document.getElementById('popupTargetTxt').style.color = '#0052cc';
+        document.getElementById('popupTargetTxt').style.fontWeight = 'bold';
+        
+        document.getElementById('popupRewardTxt').innerText = "💎 40, 🪙 10k";
+        document.getElementById('popupRewardTxt').style.color = '#172b4d';
+        document.getElementById('popupRewardTxt').style.fontWeight = 'bold';
+        
+        element.classList.add('focused');
+        
+        const submitBtn = document.getElementById('popupSubmitBtn');
+        submitBtn.removeAttribute('disabled');
+    }
+
+    function acceptAffinityQuest() {
+        questState = 'accepted'; 
+        closeAffinityPopup('popupStep3');
+        
+        document.getElementById('missionSlot_none').style.display = 'none';
+        document.getElementById('missionSlot_active').style.display = 'flex';
+        document.getElementById('lobbyCompleteBtn').style.display = 'inline-block';
+        
+        updateRedDots();
+        enterBoard(); 
+    }
+
+    function executeShortcutFlow() {
+        closeAffinityPopup('popupStep4');
+        const isConfirmed = confirm("[테스트 기능] 인게임 필드에서 '특별의뢰 3회'를 완료했다고 가정합니다.");
+        if (isConfirmed) {
+            simulateQuestClear();
+        }
+    }
+
+    function simulateQuestClear() {
+        questState = 'completed'; 
+        
+        document.getElementById('missionProgTxt').innerText = "( 3 / 3 )";
+        document.getElementById('missionProgTxt').style.color = '#36b37e';
+        document.getElementById('missionBadge').innerText = "목표 달성";
+        document.getElementById('missionBadge').style.background = "#36b37e";
+        document.getElementById('missionSlot_active').style.borderColor = "#36b37e";
+        
+        updateRedDots();
+        changeView('viewLobby', '메인 로비 (미션 완료)', '인게임 목표 달성! 로비 버튼에 레드닷이 생성되었습니다. 들어가서 보상을 받으세요.');
+    }
+
+    function triggerAllClearReward() {
+        questState = 'claimed';
+        hibikiProgress = 3;
+        closeAffinityPopup('popupStep5');
+        
+        updateRedDots();
+        
+        document.getElementById('missionSlot_active').style.display = 'none'; 
+        document.getElementById('lobbyCompleteBtn').style.display = 'none';
+
+        const hibikiSlot = document.getElementById('storyHibikiSlot');
+        hibikiSlot.classList.remove('locked');
+        document.getElementById('hibikiLockLabel').style.display = 'none';
+        document.getElementById('hibikiRedDot').style.display = 'inline-block'; 
+        
+        openAffinityPopup('popupStep6', '후일담 해금', '3개의 분기를 모두 클리어하여 스토리 해금 팝업이 출력되었습니다.');
+    }
+
+    function readHibikiStory() {
+        // 스토리 접근 권한 로직 보완
+        if (questState !== 'claimed') return;
+
+        alert("히비키 부탁 후일담 스토리를 감상합니다.\n[초회 보상 💎 50개 및 한정 칭호 획득!]");
+        document.getElementById('hibikiRedDot').style.display = 'none'; 
+        document.getElementById('hibikiRewardState').innerText = "수령 완료";
+        document.getElementById('hibikiRewardState').style.color = "#36b37e";
+        const btn = document.getElementById('hibikiReadBtn');
+        btn.innerText = "다시보기";
+        btn.classList.replace('btn-blue', 'btn-gray');
+    }
+
+    function updateRedDots() {
+        const lobbyDot = document.getElementById('lobbyRedDot');
+        if (questState === 'none' || questState === 'completed') {
+            lobbyDot.style.display = 'inline-block';
+        } else {
+            lobbyDot.style.display = 'none';
+        }
+    }
+
+    function resetPrototype() {
+        questState = 'none'; 
+        hibikiProgress = 2;
+        
+        document.querySelectorAll('.popup-backdrop').forEach(pop => pop.style.display = 'none');
+        
+        document.getElementById('missionSlot_none').style.display = 'flex';
+        document.getElementById('missionSlot_active').style.display = 'none';
+        document.getElementById('missionProgTxt').innerText = "( 0 / 3 )";
+        document.getElementById('missionProgTxt').style.color = '#6b778c';
+        document.getElementById('missionBadge').innerText = "부탁 진행중";
+        document.getElementById('missionBadge').style.background = "#de7b00";
+        document.getElementById('missionSlot_active').style.borderColor = "#de7b00";
+        document.getElementById('lobbyCompleteBtn').style.display = 'none';
+        
+        document.querySelectorAll('.branch-item').forEach(el => el.classList.remove('focused'));
+        document.getElementById('popupTargetTxt').innerText = "해결 방안을 선택해주세요";
+        document.getElementById('popupTargetTxt').style.color = '#6b778c';
+        document.getElementById('popupTargetTxt').style.fontWeight = 'normal';
+        document.getElementById('popupRewardTxt').innerText = "-";
+        document.getElementById('popupRewardTxt').style.color = '#6b778c';
+        document.getElementById('popupRewardTxt').style.fontWeight = 'normal';
+        document.getElementById('popupSubmitBtn').setAttribute('disabled', 'true');
+
+        const hibikiSlot = document.getElementById('storyHibikiSlot');
+        hibikiSlot.classList.add('locked');
+        document.getElementById('hibikiLockLabel').style.display = 'block';
+        document.getElementById('hibikiRedDot').style.display = 'none';
+        document.getElementById('hibikiRewardState').innerText = "초회 청휘석";
+        document.getElementById('hibikiRewardState').style.color = "#6b778c";
+        const btnHibiki = document.getElementById('hibikiReadBtn');
+        btnHibiki.innerText = "감상하기";
+        btnHibiki.classList.replace('btn-gray', 'btn-blue');
+
+        updateRedDots();
+        changeView('viewLobby', '메인 로비 대기 상태', '[부탁] 버튼을 눌러 방문 리스트를 확인하세요.');
+    }
+    
+    updateRedDots();
+</script>
+<!-- ========================================== -->
+<!-- 인터랙티브 프로토타입 끝 -->
+<!-- ========================================== --><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h1 style="font-size: 28px; color: rgb(0, 0, 0);" data-prefix="3. " id="heading-alx6c37xa"><a href="#dynamic-toc" class="toc-backlink">컨텐츠 제공 방향성</a></h1><div><hr id="null"></div><h2 id="heading-tw5a3sbta" data-prefix="3.1. " style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;"><a href="#dynamic-toc" class="toc-backlink">캐릭터 교감 경험 강화</a></h2><hr id="null"><p class="isSelectedEnd">본 시스템은 일일 퀘스트를 단순한 반복 과제가 아니라, 캐릭터와 짧게 교감하는 접점으로 활용하는 것을 목표로 합니다.</p><p class="isSelectedEnd">기존 일일 퀘스트가 재화 획득을 위한 반복 루틴에 가까웠다면, 부탁 컨텐츠는 매일 다른 캐릭터가 유저에게 직접 말을 걸고, 유저가 해당 캐릭터의 문제를 해결해주는 구조로 구성됩니다.&nbsp;</p><p class="isSelectedEnd">이를 통해 유저는 매일의 플레이 과정에서 캐릭터의 성격, 고민, 관계성, 세계관 내 위치를 자연스럽게 접하게 됩니다.</p><p class="isSelectedEnd"><br></p><p>특히 수집형 RPG에서 캐릭터에 대한 애정은 수집 동기와 장기 플레이 동기에 큰 영향을 줍니다.&nbsp;</p><p>따라서 본 시스템은 전투 성능이나 이벤트 스토리 외에도, 일상적인 퀘스트 루틴 안에서 캐릭터의 매력을 반복적으로 노출하는 역할을 수행합니다.</p><p><br></p><h2 data-prefix="3.2. " id="heading-b7k4qbcj7" style="font-size: 22px; color: rgb(7, 71, 166);"><a href="#dynamic-toc" class="toc-backlink">분기 수집을 통한 반복 플레이 동기 제공</a></h2><div><hr id="null"></div><p class="isSelectedEnd">부탁은 하나의 상황에 대해 여러 해결 방안을 제공하며, 각 해결 방안은 서로 다른 부탁 분기 퀘스트로 연결됩니다.</p><p class="isSelectedEnd">유저는 하루에 하나의 해결 방안만 선택할 수 있으므로, 하나의 부탁에 포함된 모든 분기 퀘스트를 확인하기 위해서는 같은 부탁을 여러 번 만나고, 다른 선택지를 선택해야 합니다.&nbsp;</p><p class="isSelectedEnd">이를 통해 단순히 “오늘의 퀘스트를 완료한다”에서 끝나는 것이 아니라, 아직 확인하지 못한 분기와 대사를 수집하려는 반복 플레이 동기가 발생합니다.</p><p class="isSelectedEnd"><br></p><p>또한 분기 클리어 기록이 누적되기 때문에, 유저는 같은 부탁을 다시 만나더라도 이전과 다른 선택을 통해 새로운 내용을 확인할 수 있습니다.&nbsp;</p><p>이는 반복 노출로 인한 피로도를 줄이고, 일일 퀘스트에 가벼운 수집 목표를 부여하는 장치로 동작합니다.</p><p><br></p><h2 data-prefix="3.3. " id="heading-q2nadb5ie" style="font-size: 22px; color: rgb(7, 71, 166);"><a href="#dynamic-toc" class="toc-backlink">미보유 캐릭터 노출을 통한 획득 동기&nbsp;</a>제공</h2><div><hr id="null"></div><p class="isSelectedEnd">부탁 컨텐츠에서는 캐릭터 보유 여부와 관계없이 캐릭터의 부탁이 등장할 수 있습니다.</p><p class="isSelectedEnd">이는 유저가 아직 획득하지 않은 캐릭터의 성격과 매력을 사전에 경험할 수 있도록 하기 위한 장치입니다.&nbsp;</p><p class="isSelectedEnd">캐릭터를 보유하지 않은 상태에서도 해당 캐릭터가 어떤 방식으로 말하고, 어떤 문제를 겪으며, 어떤 관계성을 가지고 있는지 일부 확인할 수 있다면, 유저는 해당 캐릭터에 대한 관심을 갖게 됩니다.</p><p class="isSelectedEnd"><br></p><p class="isSelectedEnd">다만 미보유 캐릭터의 부탁은 캐릭터를 완전히 대체하는 체험이 아니라, 획득 욕구를 자극하는 미리보기 역할에 가깝습니다.&nbsp;</p><p class="isSelectedEnd">따라서 후일담 스토리와 같이 캐릭터와의 깊은 관계성을 다루는 컨텐츠는 기존 캐릭터 보유 조건 및 스토리 감상 시스템의 규칙을 따르도록 합니다.</p><p class="isSelectedEnd"><ul><li><a href="#heading-8e30jx9ju" style="color: rgb(0, 82, 204); font-weight: bold;">5.1. 스토리 감상 시스템과의 연계</a>&nbsp;참고</li></ul><div><br></div></p><p>이를 통해 부탁 컨텐츠는 신규 캐릭터, 픽업 캐릭터, 이벤트 캐릭터의 매력을 자연스럽게 노출하고, 가챠 및 캐릭터 획득 동기와 연결될 수 있습니다.</p><p><br></p><p><br></p><h2 style="font-size: 22px; color: rgb(7, 71, 166);" data-prefix="3.4. " id="heading-935qti6qz"><a href="#dynamic-toc" class="toc-backlink">후일담 스토리의 역할</a></h2><div><hr id="null"><br></div><div><p class="isSelectedEnd">후일담 스토리는 하나의 부탁에 포함된 모든 분기 퀘스트를 1회 이상 클리어했을 때 제공되는 최종 수집 보상입니다.</p><p class="isSelectedEnd">각 분기 퀘스트가 캐릭터의 문제를 서로 다른 방식으로 해결하는 짧은 에피소드라면, <b>후일담 스토리는 해당 부탁을 모두 경험한 유저에게 제공되는 최종 보상</b>입니다.&nbsp;</p><p class="isSelectedEnd">유저는 여러 해결 방안을 확인한 뒤, 후일담을 통해 캐릭터의 반응이나 이후의 변화를 확인할 수 있습니다.</p><p class="isSelectedEnd">이 구조는 부탁 분기 퀘스트의 반복 플레이에 명확한 목표를 제공합니다. 단순히 보상을 얻기 위해 퀘스트를 반복하는 것이 아니라, 캐릭터의 숨겨진 이야기와 최종 에피소드를 보기 위해 분기를 수집하게 만드는 방식입니다.</p><p class="isSelectedEnd"><br></p><p class="isSelectedEnd">또한 후일담 스토리의 최초 감상 보상으로는 일반 재화보다 <b>캐릭터 애정과 소장 욕구를 자극할 수 있는 독점형 보상을 제공</b>할 수 있습니다.&nbsp;</p><p class="isSelectedEnd">예를 들어 캐릭터 전용 프로필 아이콘, 명함, 로비 연출, 배경, 칭호, 스탬프, 특별 대사와 같이 캐릭터와 직접 연결된 보상을 제공하면, 유저가 후일담 스토리까지 도달하려는 동기를 강화할 수 있습니다.</p><p class="isSelectedEnd">이는 기존 수집형 RPG에서 캐릭터 호감도 보상으로 제공하던 전용 연출·프로필 꾸미기 요소·특별 대사 등을, 부탁 콘텐츠의 분기 수집 보상으로 확장하는 방식입니다. 해당 캐릭터의 부탁을 여러 방식으로 해결하고 이야기를 수집한 결과로 독점 보상을 획득하게 됩니다.</p><p class="isSelectedEnd"><br></p><p>후일담 스토리는 기존 스토리 감상 시스템을 통해 제공되는 것으로 가정하며, 본 문서에서는 후일담이 해금되는 조건과 부탁 콘텐츠에서의 역할만 다룹니다.</p></div>
+        
+        <br><br><br><br>
+        <h1 style="font-size: 28px; color: rgb(0, 0, 0); outline-offset: 4px;" id="heading-9x1ge1vnu" data-prefix="4. "><a href="#dynamic-toc" class="toc-backlink"></a>시스템 세부사항</h1><div><hr id="null"><br></div><h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" id="heading-715dv2xoq" data-prefix="4.1. "><a href="#dynamic-toc" class="toc-backlink">부탁 등장 규칙</a></h2><div><hr id="null"><br></div><p style="font-size: 14px; color: rgb(23, 43, 77);"><a href="https://i.imgur.com/zmGwiSD.jpeg" target="_blank"><img src="https://i.imgur.com/zmGwiSD.jpeg" style="max-width: 1000px; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></p><h3 style="font-size: 20px; color: rgb(0, 82, 204);" id="heading-gagzxias4" data-prefix="4.1.1. "><a href="#dynamic-toc" class="toc-backlink">개요</a></h3><div><hr id="null"></div><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><p style=""><li style=""><font color="#172b4d"><span style="font-size: 14px;">매일 공통 초기화 시점에 기존 일일 부탁 목록이 초기화되고, 새로운 일일 부탁 목록이 생성됩니다.</span></font></li></p></blockquote><ul><ul><li><font color="#172b4d"><span style="font-size: 14px;">본 문서에서는 하루에 4개의 부탁이 일일 부탁 목록에 표시되는 것으로 가정합니다.</span></font></li></ul></ul><p style="font-size: 14px; color: rgb(23, 43, 77);"><ul><li>캐릭터의 보유 여부와 관계없이, 부탁이 등장합니다.</li></ul><ul><li>동일한 캐릭터의 부탁 여러개가 동시에 등장하지 않습니다.</li></ul><ul><ul><li>동일한 부탁 여러개가 동시에 등장하지 않습니다.</li></ul></ul></p><div><br></div><p></p><div><font color="#172b4d"><span style="font-size: 14px; font-weight: 400;"><br></span></font></div><h3 style="font-size: 20px; color: rgb(0, 82, 204);" id="heading-s5ba39j4d" data-prefix="4.1.2. "><a href="#dynamic-toc" class="toc-backlink">부탁 선정 방식</a></h3><hr id="null"><table class="content-table"><tbody><tr><th><!-- draw.io diagram -->
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot;&gt;\n  &lt;diagram name=\&quot;Page-1\&quot; id=\&quot;CCR-obourSohkFL3ksdk\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;2054\&quot; dy=\&quot;1111\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;550\&quot; pageHeight=\&quot;300\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-1\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;\&quot; value=\&quot;초기화 시작\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;60\&quot; width=\&quot;160\&quot; x=\&quot;29\&quot; y=\&quot;62\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-2\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;\&quot; value=\&quot;기존 일일 부탁 목록 초기화&amp;lt;div&amp;gt;n = 4&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 8px;&amp;quot;&amp;gt;(n : 남은 선정 개수)&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;80\&quot; width=\&quot;180\&quot; x=\&quot;235\&quot; y=\&quot;52\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-3\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;\&quot; value=\&quot;부탁 후보군 갱신&amp;lt;br&amp;gt;&amp;lt;font style=&amp;quot;font-size: 9px;&amp;quot;&amp;gt;- 등장 조건을 만족하지 않는 부탁 제외&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 9px;&amp;quot;&amp;gt;- 이미 선정된 캐릭터의 모든 부탁 제외&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;80\&quot; width=\&quot;240\&quot; x=\&quot;455\&quot; y=\&quot;52\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-4\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;\&quot; value=\&quot;&amp;lt;div&amp;gt;부탁 후보군에서,&amp;lt;/div&amp;gt;확률 가중치를 바탕으로&amp;amp;nbsp;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;부탁 1개 추첨&amp;lt;/span&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;선정된 부탁을 &amp;#39;일일 부탁 목록&amp;#39;에 추가&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;103\&quot; width=\&quot;240\&quot; x=\&quot;455\&quot; y=\&quot;172\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-5\&quot; parent=\&quot;1\&quot; style=\&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#deebff;strokeColor=#0052cc;fontColor=#000000;strokeWidth=2;\&quot; value=\&quot;n = 0 ?\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;80\&quot; width=\&quot;100\&quot; x=\&quot;735\&quot; y=\&quot;52\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-6\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#e6f6ee;strokeColor=#36b37e;fontColor=#36b37e;strokeWidth=2;fontStyle=1\&quot; value=\&quot;END&amp;lt;div&amp;gt;일일 부탁 목록 선정 완료&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;60\&quot; width=\&quot;160\&quot; x=\&quot;895\&quot; y=\&quot;62\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-7\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;nuNThII4bsTAzgDo0ZJd-1\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;\&quot; target=\&quot;nuNThII4bsTAzgDo0ZJd-2\&quot; value=\&quot;\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-8\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;nuNThII4bsTAzgDo0ZJd-2\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; target=\&quot;nuNThII4bsTAzgDo0ZJd-3\&quot; value=\&quot;\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-9\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;nuNThII4bsTAzgDo0ZJd-3\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; target=\&quot;nuNThII4bsTAzgDo0ZJd-5\&quot; value=\&quot;\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-10\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;nuNThII4bsTAzgDo0ZJd-5\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontStyle=1;fontColor=#de350b;\&quot; target=\&quot;nuNThII4bsTAzgDo0ZJd-4\&quot; value=\&quot;No\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;945\&quot; y=\&quot;272\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;925\&quot; y=\&quot;422\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-11\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;nuNThII4bsTAzgDo0ZJd-5\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontStyle=1;fontColor=#0052cc;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; target=\&quot;nuNThII4bsTAzgDo0ZJd-6\&quot; value=\&quot;Yes\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;1125\&quot; y=\&quot;-8\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-12\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;nuNThII4bsTAzgDo0ZJd-4\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontStyle=1;fontColor=#de350b;\&quot; target=\&quot;nuNThII4bsTAzgDo0ZJd-3\&quot; value=\&quot;n = n - 1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n            &lt;mxPoint x=\&quot;770\&quot; y=\&quot;152\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;755\&quot; y=\&quot;303\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;nuNThII4bsTAzgDo0ZJd-13\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\&quot; value=\&quot;더 선정할 부탁이 없는지?\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;30\&quot; width=\&quot;144\&quot; x=\&quot;713\&quot; y=\&quot;24\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><p><br></p></th></tr></tbody></table><br><div><div></div>일일 부탁 목록은 한 번에 4개를 일괄 추첨하는 방식이 아니라, 부탁을 1개씩 순차적으로 선정하는 방식으로 구성됩니다.<p></p><ul><li>단, 남은 선정 개수가 0이 되기 전에 부탁 후보군이 비는 경우, 현재까지 선정된 부탁만 일일 부탁 목록에 표시합니다.</li></ul><div><br></div><p></p><p>1) 일일 초기화 시점에 기존 일일 부탁 목록을 초기화합니다.<br>2) 등장 가능한 부탁 후보군을 구성합니다.<br>3) 현재 후보군의 확률 가중치를 기준으로 부탁 1개를 선정합니다.<br>4) 선정된 부탁을 일일 부탁 목록에 추가합니다.<br>5) 이미 선정된 부탁의 캐릭터와 연결된 다른 부탁들은 후보군에서 제외합니다.</p><p></p><ul><li>동일한 일일 부탁 목록 안에 같은 캐릭터의 부탁이 중복 등장하지 않도록 제어</li></ul>6) 일일 부탁 목록이 목표 개수에 도달할 때까지 위 과정을 반복합니다.</div><div><span style="color: rgb(23, 43, 77); font-size: 14px; text-align: center;"><br></span></div><div><br></div><div><font color="#172b4d"><span style="font-size: 14px;"><br></span></font></div><h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" id="heading-r72hy5cjz" data-prefix="4.1.3. "><a href="#dynamic-toc" class="toc-backlink">확률 계산</a></h3><div><hr id="null"></div><p>모든 부탁에는 '확률 가중치'가 할당되어 있으며, 이를 바탕으로 매일 등장할 부탁이 결정됩니다.</p><p><br></p><p style="font-size: 18px; color: rgb(0, 0, 0);"><b>의도</b></p><hr id="null"><p>'확률 가중치'를 사용하는 의도는 다음과 같습니다.</p><p></p><ul><li>일부 분기를 클리어한 부탁이 다시 등장할 확률을 높입니다. (모든 분기를 수집하도록 유도) --&gt; '진행도'와 '진행중 상수' 를 수식에 사용</li><li>이미 완료한 '부탁'을 덜 노출합니다 (경험의 신선도 유지) --&gt; '완료 상수'를 수식에 사용</li><li>라이브 서비스 상황에 맞추어, 특정 부탁이 더 노출될 수 있어야 합니다. --&gt; 부탁마다 '기본 가중치'를 데이터 테이블에서 설정 가능한 형태</li></ul><p></p><p><br></p><p style="font-size: 18px; color: rgb(0, 0, 0);"><b>부탁 등장 확률 계산</b></p><hr id="null"><p>기본적으로, 각 부탁의 등장 확률은 다음과 같이 계산됩니다.</p><table class="content-table"><tbody><tr><th><span style="color: rgb(0, 0, 0); font-size: medium; font-weight: 400; background-color: rgb(255, 255, 255);">각 부탁의 등장 확률 = 해당 부탁 가중치 / 후보군 내 부탁 가중치 총합</span></th></tr></tbody></table><p><br></p><div>각 부탁의 가중치는 다음과 같은 수식을 바탕으로 계산됩니다.&nbsp;</div><p style="font-size: 12px; color: rgb(102, 102, 102);">※ floor(x): x 이하의 가장 큰 정수를 반환하는 내림 함수를 의미합니다.<br>※ 해당 수식을 이해를 돕기 위한 표현이며, 실제 구현 시에는 다른 방식으로 처리할 수 있습니다.</p>
+        
+        <table class="content-table"><tbody><tr><th><span style="color: rgb(0, 0, 0); font-size: medium; font-weight: 400; background-color: rgb(255, 255, 255);">해당 부탁 가중치 = 기본 가중치 + 진행도 × 진행중 상수 - (진행중 상수 + 완료 상수) × floor(진행도)</span></th></tr></tbody></table><br><div class="formula-box"><br></div>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 150px;">용어</th>
+                    <th style="width: 1200px;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>기본 가중치</strong></td>
+                    <td><p style="">
+                        각 '부탁' 마다 별도로 할당된, 데이터 테이블에서 정의된 확률 가중치 값입니다.</p><p style=""><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204); font-weight: bold;">부탁 테이블 (DailyRequest)&nbsp;▷&nbsp;ProbabilityWeightBase</a></li></ul></p><table class="content-table"><tbody><tr><th><span style="background-color: rgb(255, 255, 255);"><font color="#000000">💡 왜 기본 가중치는 고정값이 아닌가요?&nbsp;</font></span><span style="color: rgb(0, 0, 0); font-weight: 400; background-color: rgb(255, 255, 255);"></span><br style="color: rgb(0, 0, 0); font-weight: 400; background-color: rgb(255, 255, 255);"><br style="color: rgb(0, 0, 0); font-weight: 400; background-color: rgb(255, 255, 255);"><span style="color: rgb(0, 0, 0); font-weight: 400; background-color: rgb(255, 255, 255);">라이브 서비스 환경에 따라, 캐릭터의 확률 가중치를 조절할 경우가 많을 것으로 예상합니다. <br>'캐릭터의 성격'이나 '현재 픽업 이벤트 진행 여부'등에 따라 다양한 변수가 개입할 것임을 염두에 두어, </span><span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">데이터 테이블을 통해 상시 밸런싱 가능하도록 설정</span><span style="color: rgb(0, 0, 0); font-weight: 400; background-color: rgb(255, 255, 255);">합니다.</span></th></tr></tbody></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>진행도</strong></td>
+                    <td><p>각 '부탁'의 (클리어한 부탁 분기 퀘스트)/(부탁 분기 퀘스트 총 개수)를 의미합니다.</p><ul><li>예) 분기 하나만 클리어한 경우, 진행도는 1/3</li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>진행중 상수</strong></td>
+                    <td>'부탁'의 일부 분기 퀘스트만 완료한 경우, 해당 '부탁'이 등장할 확률을 보정하기 위한 상수입니다. (고정값) <br><ul><li>진행도가 0 초과 1 미만인 경우 최종 가중치에 보너스로 반영됩니다.</li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>완료 상수</strong></td>
+                    <td>클리어 완료한 부탁의 등장 확률을 보정하기 위한 상수입니다. (고정값) <br><ul><li>'진행도'가 1인 경우, 최종 가중치에 페널티로 반영됩니다.</li></ul></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <br><div>아래는 상황별 가중치 예시입니다.</div><div><br></div><div><table class="content-table"><tbody><tr><th>진행도</th><th>가중치 계산 결과</th><th>설명</th></tr><tr><td>0</td><td>기본 가중치</td><td>미진행 상태<br>유저가 해당 부탁의 어떠한 분기도 클리어하지 않은 경우<br>--&gt; 보정 없음</td></tr><tr><td>1/3&nbsp;≒ 0.33</td><td>기본 가중치 + 0.33*진행중 상수</td><td>진행 상태<br>분기 3개 중 1개만 클리어한 경우<br>--&gt; 등장 확률 상승</td></tr><tr><td>2/3≒ 0.66</td><td>기본 가중치 + 0.66*진행중 상수</td><td>진행 상태<br>분기 3개 중 2개만 클리어한 경우<br>--&gt; 등장 확률 상승</td></tr><tr><td>1</td><td>기본 가중치 - 완료 상수</td><td>완료 상태<br>모든 분기를 클리어한 경우<br>--&gt; 등장 확률 감소</td></tr></tbody></table><br></div><div><br></div><div><br></div><h2 style="font-size: 22px; color: rgb(7, 71, 166);" data-prefix="4.2. " id="heading-la4pq2sxa"><a href="#dynamic-toc" class="toc-backlink">초기화&nbsp;과정</a></h2><div><hr id="null"><table class="content-table"><tbody><tr><th><!-- draw.io diagram -->
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot;&gt;\n  &lt;diagram name=\&quot;Page-1\&quot; id=\&quot;m_DzDbd9GEVquJCbxjQI\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;2604\&quot; dy=\&quot;1111\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;550\&quot; pageHeight=\&quot;300\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-1\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;\&quot; value=\&quot;공통 초기화 진행\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;60\&quot; width=\&quot;160\&quot; x=\&quot;-320\&quot; y=\&quot;62\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-6\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#e6f6ee;strokeColor=#36b37e;fontColor=#36b37e;strokeWidth=2;fontStyle=1\&quot; value=\&quot;END&amp;lt;div&amp;gt;일일 부탁 목록 선정 시작&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;60\&quot; width=\&quot;160\&quot; x=\&quot;330\&quot; y=\&quot;62\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-7\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;SmsbnB_eIEmLbGJpQjaC-1\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; target=\&quot;SmsbnB_eIEmLbGJpQjaC-14\&quot; value=\&quot;\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;-271\&quot; y=\&quot;250\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-14\&quot; parent=\&quot;1\&quot; style=\&quot;rhombus;whiteSpace=wrap;html=1;fillColor=#deebff;strokeColor=#0052cc;fontColor=#000000;strokeWidth=2;\&quot; value=\&quot;완료 퀘스트&amp;lt;div&amp;gt;보상 미수령?&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;80\&quot; width=\&quot;100\&quot; x=\&quot;-100\&quot; y=\&quot;52\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-15\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\&quot; value=\&quot;초기화 시점에&amp;lt;div&amp;gt;부탁 퀘스트 조건을 모두 완료했으나&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;보상을 수령하지 않았는지?&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;30\&quot; width=\&quot;182\&quot; x=\&quot;-141\&quot; y=\&quot;10\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-16\&quot; parent=\&quot;1\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;\&quot; value=\&quot;이전 접속일&amp;lt;div&amp;gt;부탁 퀘스트 보상 지급&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;80\&quot; width=\&quot;160\&quot; x=\&quot;80\&quot; y=\&quot;52\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-17\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;SmsbnB_eIEmLbGJpQjaC-14\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontStyle=1;fontColor=#0052cc;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; target=\&quot;SmsbnB_eIEmLbGJpQjaC-16\&quot; value=\&quot;Yes\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;800\&quot; y=\&quot;90\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;40\&quot; y=\&quot;92\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-18\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;SmsbnB_eIEmLbGJpQjaC-14\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontStyle=1;fontColor=#de350b;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; target=\&quot;SmsbnB_eIEmLbGJpQjaC-6\&quot; value=\&quot;No\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;-50\&quot; y=\&quot;230\&quot; /&gt;\n              &lt;mxPoint x=\&quot;280\&quot; y=\&quot;230\&quot; /&gt;\n              &lt;mxPoint x=\&quot;280\&quot; y=\&quot;92\&quot; /&gt;\n            &lt;/Array&gt;\n            &lt;mxPoint x=\&quot;-50\&quot; y=\&quot;180\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;240\&quot; y=\&quot;92\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;SmsbnB_eIEmLbGJpQjaC-19\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;SmsbnB_eIEmLbGJpQjaC-16\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; target=\&quot;SmsbnB_eIEmLbGJpQjaC-6\&quot; value=\&quot;\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;-130\&quot; y=\&quot;90\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;240\&quot; y=\&quot;92\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;XIWtEYS4xvHKp86-eH16-1\&quot; parent=\&quot;1\&quot; style=\&quot;text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\&quot; value=\&quot;접속 중 공통 초기화 시점이 되었거나&amp;lt;div&amp;gt;접속 시, 마지막 접속 시간이 당일의 공통 초기화 시점 이전인 경우&amp;lt;/div&amp;gt;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;30\&quot; width=\&quot;211\&quot; x=\&quot;-345.5\&quot; y=\&quot;142\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><p><br></p></th></tr></tbody></table></div><div><ul><li>본 컨텐츠의 일일 초기화 시점은 게임 내 공통 일일 초기화 시점을 따릅니다.</li><ul><li>초기화 진행 시, 일일 부탁 목록 갱신 과정은&nbsp;<a href="#heading-715dv2xoq" style="color: rgb(0, 82, 204); font-weight: bold;">4.1. 부탁 등장 규칙</a>&nbsp;참고</li></ul><li>초기화 시점 이전에 퀘스트 목표를 달성했으나 보상을 수령하지 않은 경우, 보상을 자동 지급 처리합니다.</li><ul><li>자동 보상 지급 시에도, 분기 클리어 플래그 처리와 후일담 해금 판정은 함께 처리되어야 합니다.</li></ul><li>초기화 시점 이전에 퀘스트 목표를 달성하지 못한 경우, 해당 퀘스트는 자동 포기 처리됩니다.</li></ul><div><br></div><div><br></div></div><h2 style="font-size: 22px; color: rgb(7, 71, 166);" data-prefix="4.3. " id="heading-vv1amr2l4"><a href="#dynamic-toc" class="toc-backlink">&nbsp;보상 지급 및 분기 클리어</a></h2><div><hr id="null">부탁 퀘스트 목표를 모두 달성한 상태에서, 부탁 화면에 진입할 경우 보상을 지급합니다.</div><div><br></div><div><br></div><h3 data-prefix="4.3.1. " id="heading-vxx1aq5fm" style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;"><a href="#dynamic-toc" class="toc-backlink">기본 보상</a></h3><div><hr id="null"></div><div><ul><li>모든 부탁 분기 퀘스트에는 기본 보상이 존재합니다.&nbsp;</li><li>클리어 시 기본 보상을 지급합니다.</li><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest)&nbsp;▷RewardKey</a></li></ul><li>이미 클리어한 기록이 있는 부탁 분기 퀘스트를 클리어한 경우, 기본 보상만 지급합니다.</li></ul><div><br></div></div><h3 data-prefix="4.3.2. " id="heading-vigrj200k" style="font-size: 20px; color: rgb(0, 82, 204);"><a href="#dynamic-toc" class="toc-backlink">분기 플래그 활성화</a></h3><div><hr id="null"></div><div><ul><li><b>기존에 클리어한 적 없는 부탁 분기 퀘스트를 클리어한 경우</b>, 해당 분기에 대한 플래그를 활성화 처리합니다.</li><ul><li><a href="#heading-y7wual3nl" style="color: rgb(0, 82, 204);">4.4.2. 유저 데이터 예시</a></li></ul></ul></div><div><br></div><div><h3 data-prefix="4.3.3. " id="heading-3e47fi5o9" style="font-size: 20px; color: rgb(0, 82, 204);"><a href="#dynamic-toc" class="toc-backlink">후일담 스토리 해금</a></h3><div><hr id="null"></div><div>* 해당 문서에서는 스토리 시스템이 이미 구현되었다고 가정합니다.</div><div><br></div><ul><li>해당 부탁의 모든 부탁 분기 퀘스트를 처음으로 클리어한 경우, 후일담 스토리를 해금합니다.</li><ul><li><a href="#heading-y7wual3nl" style="color: rgb(0, 82, 204);">4.4.2. 유저 데이터 예시</a></li></ul></ul></div><div><div><br></div><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="4.4. " id="heading-31k7tnk7m"><a href="#dynamic-toc" class="toc-backlink">데이터 구조 예시<br></a></h2>
+        <hr>
+        <table class="content-table"><tbody><tr><th><!-- draw.io diagram -->
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot;&gt;\n  &lt;diagram name=\&quot;페이지-1\&quot; id=\&quot;LONs9yqigCFcSv28tLn_\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;2343\&quot; dy=\&quot;1021\&quot; grid=\&quot;0\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;550\&quot; pageHeight=\&quot;300\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#d5e8d4;strokeColor=#82b366;\&quot; value=\&quot;DailyRequest\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;301\&quot; width=\&quot;448\&quot; x=\&quot;-486\&quot; y=\&quot;283\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;448\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-3\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-4\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-5\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-6\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;부탁 고유 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;170\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;170\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-7\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;448\&quot; y=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-8\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-7\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-9\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-7\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;CharacterKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-10\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-7\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;FK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-11\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-7\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;대상 캐릭터 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;170\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;170\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-12\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;448\&quot; y=\&quot;117\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-13\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-12\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;int\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-14\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-12\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;ProbabilityWeightBase\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-15\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-12\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-16\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-12\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;기본 확률 가중치\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;170\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;170\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-17\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;448\&quot; y=\&quot;163\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-18\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-17\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-19\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-17\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;RewardStoryKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-20\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-17\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;FK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-21\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-17\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;보상 후일담 스토리 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;170\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;170\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-22\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;448\&quot; y=\&quot;209\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-23\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-22\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;LocaleKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-24\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-22\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;RequestNameLocale\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-25\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-22\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-26\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-22\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;부탁 이름\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;170\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;170\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-27\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-1\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;448\&quot; y=\&quot;255\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-28\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-27\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;LocaleKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-29\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-27\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;RequestDialogLocale\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-30\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-27\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-31\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-27\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;부탁 대사\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;46\&quot; width=\&quot;170\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;46\&quot; width=\&quot;170\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#d5e8d4;strokeColor=#82b366;\&quot; value=\&quot;DailyRequestRouteQuest\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;342\&quot; width=\&quot;454\&quot; x=\&quot;-486\&quot; y=\&quot;660\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-33\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-34\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-33\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-35\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-33\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-36\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-33\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK, FK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-37\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-33\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;부탁 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-38\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;70\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-39\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-38\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;int\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-40\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-38\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;index\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-41\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-38\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-42\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-38\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;선택지 순서\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-43\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;115\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-44\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-43\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-45\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-43\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;QuestConditionKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-46\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-43\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;FK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-47\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-43\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;퀘스트 조건 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-48\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;160\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-49\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-48\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;LocaleKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-50\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-48\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;RouteTextLocale\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-51\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-48\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-52\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-48\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;해결방안 텍스트\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-53\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;205\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-54\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-53\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;LocaleKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-55\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-53\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;AcceptDialogLocale\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-56\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-53\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-57\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-53\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;퀘스트 진행중 대사\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-58\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;250\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-59\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-58\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;LocaleKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-60\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-58\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;CompleteDialogLocale\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-61\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-58\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-62\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-58\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;퀘스트 완료 대사\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-63\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-32\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;454\&quot; y=\&quot;295\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-64\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-63\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;78\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-65\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-63\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;RewardKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;160\&quot; x=\&quot;78\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;160\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-66\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-63\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;FK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;40\&quot; x=\&quot;238\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-67\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-63\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;보상 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;176\&quot; x=\&quot;278\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;176\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-68\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);\&quot; value=\&quot;Character\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;86\&quot; width=\&quot;200\&quot; x=\&quot;112\&quot; y=\&quot;322\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-69\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-68\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;200\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-70\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-69\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-71\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-69\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;CharacterKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;120\&quot; x=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;120\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-72\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-69\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;50\&quot; x=\&quot;150\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-73\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);\&quot; value=\&quot;Story\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;86\&quot; width=\&quot;200\&quot; x=\&quot;112\&quot; y=\&quot;410\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-74\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-73\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;200\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-75\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-74\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;29\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;29\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-76\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-74\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;StoryKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;120\&quot; x=\&quot;29\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;120\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-77\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-74\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;51\&quot; x=\&quot;149\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;51\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-78\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);\&quot; value=\&quot;QuestCondition\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;86\&quot; width=\&quot;200\&quot; x=\&quot;112\&quot; y=\&quot;740\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-79\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-78\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;200\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-80\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-79\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;40\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-81\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-79\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;QuestConditionKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;110\&quot; x=\&quot;40\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;110\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-82\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-79\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;50\&quot; x=\&quot;150\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-83\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);\&quot; value=\&quot;Reward\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;86\&quot; width=\&quot;189\&quot; x=\&quot;112\&quot; y=\&quot;921\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-84\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-83\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;189\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-85\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-84\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;29\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;29\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-86\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-84\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;RewardKey\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;120\&quot; x=\&quot;29\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;120\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-87\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-84\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;PK\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;61\&quot; width=\&quot;40\&quot; x=\&quot;149\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;61\&quot; width=\&quot;40\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; parent=\&quot;1\&quot; style=\&quot;shape=table;startSize=25;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;resizeLast=1;fillColor=#dae8fc;strokeColor=#6c8ebf;\&quot; value=\&quot;UserData\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;342\&quot; width=\&quot;410\&quot; x=\&quot;-1018\&quot; y=\&quot;660\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-89\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;25\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-90\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-89\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;boolean\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-91\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-89\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestRouteQuestFlag\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-92\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-89\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;분기 퀘스트별 최초 클리어 여부\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-93\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;70\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-94\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-93\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;boolean\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-95\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-93\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestStoryUnlockFlag\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-96\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-93\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;부탁 후일담 지급 여부\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-97\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;115\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-98\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-97\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;List\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-99\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-97\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestList\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-100\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-97\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;일일 부탁 목록 (Key List)\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-101\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;160\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-102\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-101\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-103\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-101\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestAccepted\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-104\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-101\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;진행 중인 부탁 Key\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-105\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;205\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-106\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-105\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;int\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-107\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-105\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestRouteIndex\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-108\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-105\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;진행 중인 분기 퀘스트 index\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-109\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;250\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-110\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-109\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Enum\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-111\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-109\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestStatus\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-112\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-109\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;부탁 퀘스트 상태\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-113\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-88\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;410\&quot; y=\&quot;295\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-114\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-113\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;Date\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;50\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-115\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-113\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;DailyRequestDate\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;198\&quot; x=\&quot;50\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;198\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-116\&quot; parent=\&quot;mWODeacHt8Iyrf-lI7Ue-113\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=2;overflow=hidden;fontSize=11;\&quot; value=\&quot;일일 부탁 목록 생성일\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry height=\&quot;45\&quot; width=\&quot;162\&quot; x=\&quot;248\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle height=\&quot;45\&quot; width=\&quot;162\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-117\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; style=\&quot;curved=1;startArrow=none;startSize=10;;endArrow=none;endSize=10;;exitX=0;exitY=0.5;entryX=0;entryY=0.5;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endFill=0;startFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-33\&quot; value=\&quot;1:N (부탁 1개당 여러 분기)\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; x=\&quot;0.0795\&quot; y=\&quot;-28\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;-618\&quot; y=\&quot;580\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-118\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-7\&quot; style=\&quot;curved=1;startArrow=ERzeroToMany;startSize=10;;endArrow=none;endSize=10;;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-69\&quot; value=\&quot;캐릭터 참조\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;Array as=\&quot;points\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-119\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-17\&quot; style=\&quot;curved=1;startArrow=ERzeroToMany;startSize=10;;endArrow=none;endSize=10;;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-74\&quot; value=\&quot;후일담 보상 참조\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;Array as=\&quot;points\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-120\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-43\&quot; style=\&quot;curved=1;startArrow=ERzeroToMany;startSize=10;;endArrow=none;endSize=10;;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-79\&quot; value=\&quot;목표 조건 참조\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-121\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-63\&quot; style=\&quot;curved=1;startArrow=ERzeroToMany;startSize=10;;endArrow=none;endSize=10;;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-84\&quot; value=\&quot;기본 보상 참조\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-122\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-101\&quot; style=\&quot;curved=1;startArrow=ERzeroToMany;startSize=10;;endArrow=none;endSize=10;;entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-2\&quot; value=\&quot;진행중/목록 관리\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; x=\&quot;0.1302\&quot; y=\&quot;-40\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;-1\&quot; as=\&quot;offset\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;-1158\&quot; y=\&quot;862\&quot; /&gt;\n              &lt;mxPoint x=\&quot;-947\&quot; y=\&quot;408\&quot; /&gt;\n            &lt;/Array&gt;\n            &lt;mxPoint x=\&quot;-818\&quot; y=\&quot;300\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;mWODeacHt8Iyrf-lI7Ue-123\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;mWODeacHt8Iyrf-lI7Ue-89\&quot; style=\&quot;curved=1;startArrow=ERzeroToMany;startSize=10;;endArrow=none;endSize=10;;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;exitDx=0;exitDy=0;endFill=0;\&quot; target=\&quot;mWODeacHt8Iyrf-lI7Ue-38\&quot; value=\&quot;분기별 클리어 관리\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><p><br></p></th></tr></tbody></table><p><br></p><h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" data-prefix="4.4.1. " id="heading-p4w5eg22v"><a href="#dynamic-toc" class="toc-backlink">마스터 데이터&nbsp;예시</a></h3><div><hr id="null">데이터 테이블을 통해 관리되는 필드 목록</div><div><table class="content-table" style="width: 1518px;"><tbody><tr><th><span style="background-color: rgb(255, 255, 255);"><font color="#000000">💡 다음의 데이터 구조는 이미 존재한다고 가정합니다</font><br><ul><li><font color="#000000">캐릭터</font></li><li><span style="background-color: rgb(255, 255, 255);"><font color="#000000">퀘스트 조건</font></span></li><li><span style="background-color: rgb(255, 255, 255);"><font color="#000000">보상</font></span></li><li><span style="background-color: rgb(255, 255, 255);"><font color="#000000">스토리</font></span></li></ul></span></th></tr></tbody></table></div><div><br></div><p style="font-size: 18px; color: rgb(0, 0, 0);"><b>부탁 테이블 (DailyRequest)</b></p><div><table class="content-table"><tbody><tr><th style="width: 120px;">필드명</th><th style="width: 150px;">이름</th><th style="width: 150px;">타입</th><th>설명</th></tr><tr><td style="width: 120px;"><b>DailyRequestKey</b></td><td style="width: 150px;"><b>부탁 Key</b></td><td style="width: 150px;"><b>Key (기본 키)</b></td><td><b>해당 부탁의 고유 Key</b></td></tr><tr><td style="width: 120px;">CharacterKey</td><td style="width: 150px;">대상 캐릭터 Key</td><td style="width: 150px;">Key (외래 키)</td><td>부탁을 제공하는 캐릭터 Key</td></tr><tr><td style="width: 120px;">ProbabilityWeightBase</td><td style="width: 150px;">기본 확률 가중치</td><td style="width: 150px;">int</td><td>부탁 등장 확률 계산을 위한 기본 가중치<br><ul><li><a href="#heading-r72hy5cjz" style="color: rgb(0, 82, 204);">4.1.3. 확률 계산</a>&nbsp;참고</li></ul></td></tr><tr><td style="width: 120px;">RewardStoryKey</td><td style="width: 150px;">보상 후일담 스토리 Key</td><td style="width: 150px;">Key (외래 키)</td><td>부탁 내 모든 분기 퀘스트 1회 이상 클리어 시 제공 보상 (후일담 스토리)</td></tr><tr><td style="width: 120px;">RequestNameLocale</td><td style="width: 150px;">부탁 이름</td><td style="width: 150px;">Locale Key</td><td>유저에게 노출될 '부탁 이름'의 로케일</td></tr><tr><td style="width: 120px;">RequestDialogLocale</td><td style="width: 150px;">부탁 대사</td><td style="width: 150px;">Locale Key</td><td>분기 퀘스트 수령 단계에서 노출될 캐릭터 대사 로케일</td></tr></tbody></table><br></div><p style="font-size: 18px; color: rgb(0, 0, 0);"><b>분기 퀘스트 테이블 (DailyRequestRouteQuest)</b></p><div><table class="content-table" style="width: 1518px;"><tbody><tr><th style="width: 120px;">필드명</th><th style="width: 150px;">이름</th><th style="width: 150px;">타입</th><th>설명</th></tr><tr><td style="width: 120px;"><b>DailyRequestKey</b></td><td style="width: 150px;"><b>부탁 Key</b></td><td style="width: 150px;"><b>Key (외래 키)</b></td><td><b>분기 퀘스트가 등장할 부탁 Key</b></td></tr><tr><td style="width: 120px;"><b>index</b></td><td style="width: 150px;"><b>선택지 순서</b></td><td style="width: 150px;"><b>int</b></td><td><b>'해결 방안' 선택지 순서</b> (0은 사용하지 않음)<b><br>해당 테이블은 (DailyRequestKey, index)의 조합을 기본키로 사용<br></b></td></tr><tr><td style="width: 120px;">QuestConditionKey</td><td style="width: 150px;">퀘스트 조건 Key</td><td style="width: 150px;">Key (외래 키)</td><td>퀘스트의 목표 조건과 수량등을 정하는 QuestConditionKey를 연결</td></tr><tr><td style="width: 120px;">RouteTextLocale</td><td style="width: 150px;">해결방안 텍스트</td><td style="width: 150px;">Locale Key</td><td>퀘스트와 연결된 '해결 방안' 선택지 버튼에 노출될 텍스트 로케일</td></tr><tr><td style="width: 120px;">AcceptDialogLocale</td><td style="width: 150px;">퀘스트 진행중 대사</td><td style="width: 150px;">Locale Key</td><td>분기 퀘스트 진행 중에 노출될 캐릭터 대사 로케일</td></tr><tr><td style="width: 120px;">CompleteDialogLocale</td><td style="width: 150px;">퀘스트 완료 대사</td><td style="width: 150px;">Locale Key</td><td>분기 퀘스트 완료 시 노출될 캐릭터 대사 로케일</td></tr><tr><td style="width: 120px;">RewardKey</td><td style="width: 150px;">보상 Key</td><td style="width: 150px;">Key (외래 키)</td><td>분기 퀘스트 완료 시 지급할 기본 보상 Key<br><ul><li><a href="#heading-vxx1aq5fm" style="color: rgb(0, 82, 204);">4.3.1. 기본 보상</a></li></ul></td></tr></tbody></table></div><div><br></div><div><br></div><div><font color="#172b4d"><span style="font-size: 14px;"><br></span></font></div><h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" data-prefix="4.4.2. " id="heading-y7wual3nl"><a href="#dynamic-toc" class="toc-backlink">유저 데이터 예시</a></h3><div><hr id="null">부탁과 관련해, 유저 정보에 저장되어야 하는 값들의 예시</div><div><br></div><div><table class="content-table" style="width: 1518px;"><tbody><tr><th style="width: 120px;">플래그 명</th><th style="width: 170px;">이름</th><th style="width: 150px;">타입</th><th>설명</th></tr><tr><td style="width: 120px;">DailyRequestRouteQuestFlag</td><td style="width: 170px;">분기 퀘스트별 최초 클리어 여부</td><td style="width: 150px;">boolean</td><td>분기 퀘스트를 최초로 클리어할 경우 활성화 처리<br><ul><li>분기 퀘스트 테이블 (DailyRequestRouteQuest)의 (DailyRequestKey, index)의 조합만큼 저장 필요</li><li><a href="#heading-vigrj200k" style="color: rgb(0, 82, 204);">4.3.2. 분기 플래그 활성화</a></li></ul></td></tr><tr><td style="width: 120px;">DailyRequestStoryUnlockFlag</td><td style="width: 170px;">부탁 후일담 해금 여부</td><td style="width: 150px;">boolean</td><td>한 부탁의 모든 분기 퀘스트를 1회 이상 클리어 시, '후일담 스토리'를 해금 후 활성화 처리<br><ul><li><a href="#heading-3e47fi5o9" style="color: rgb(0, 82, 204);">4.3.3. 후일담 스토리 해금</a></li></ul></td></tr><tr><td style="width: 120px;">DailyRequestList</td><td style="width: 170px;">(당일 등장한) 일일 부탁 목록</td><td style="width: 150px;">외래 키 (DailyRequestKey)의 리스트</td><td>당일 선별되어 유저에게 표시되는 DailyRequestKey 리스트<br><ul><li>재접속 시 동일한 일일 부탁 목록과 표시 순서를 유지하기 위해 저장</li><li>공통 일일 초기화 시점에 갱신</li><li><a href="#heading-715dv2xoq" style="color: rgb(0, 82, 204);">4.1. 부탁 등장 규칙</a>&nbsp;참고</li></ul></td></tr><tr><td style="width: 120px;">DailyRequestAccepted</td><td style="width: 170px;">진행 중인 부탁</td><td style="width: 150px;">외래 키 (DailyRequestKey)</td><td>당일 유저가 수락한 부탁의 Key</td></tr><tr><td style="width: 120px;">DailyRequestRouteIndex</td><td style="width: 170px;">진행 중인 분기 퀘스트</td><td style="width: 150px;">int</td><td>당일 유저가 수락한 분기 퀘스트의 index</td></tr><tr><td style="width: 120px;">DailyRequestStatus</td><td style="width: 170px;">부탁 퀘스트 상태</td><td style="width: 150px;">Enum</td><td>당일 유저가 수락한 분기 퀘스트의 진행 상태<br><ul><li><a href="#heading-la4pq2sxa" style="color: rgb(0, 82, 204);">4.2. 초기화&nbsp;과정</a></li></ul><table class="content-table"><tbody><tr><th style="width: 50px;">순서</th><th>이름</th><th>설명</th></tr><tr><td style="width: 50px;">1</td><td>NotAccepted</td><td>아직 분기 퀘스트를 수령하지 않음</td></tr><tr><td style="width: 50px;">2</td><td>Accepted</td><td>분기 퀘스트 진행중</td></tr><tr><td style="width: 50px;">3</td><td>Completed</td><td>분기 퀘스트 조건을 모두 만족하였으나, 보상을 획득하지 않음</td></tr><tr><td style="width: 50px;">4</td><td>Claimed</td><td>분기 퀘스트 보상 획득 완료</td></tr></tbody></table><br></td></tr><tr><td style="width: 120px;">DailyRequestDate</td><td style="width: 170px;">일일 부탁 목록 생성일</td><td style="width: 150px;">Date</td><td>일일 부탁 목록이 마지막으로 생성된 날짜.<br>일일 초기화 여부 판정 시 사용</td></tr></tbody></table></div><div><br></div><div><br></div><div><br></div><div><br></div><h1 data-prefix="5. " id="heading-xbd02738l" style="font-size: 28px; color: rgb(0, 0, 0);"><a href="#dynamic-toc" class="toc-backlink">기존 시스템과의 연계 방향</a></h1><div><hr id="null"><div>부탁 콘텐츠가 기존 시스템과 연결될 수 있는 방향성을 제안합니다.</div><div>스토리 감상 시스템, 일일 미션 시스템, 캐릭터 보유 상태의 세부 동작은 기존 시스템의 규칙을 따르는 것으로 가정합니다.</div></div><div><br></div><div><br></div><div><br></div><div><h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="5.1. " id="heading-8e30jx9ju"><a href="#dynamic-toc" class="toc-backlink">스토리 감상 시스템과의&nbsp;연계</a></h2><div><hr id="null"></div><div><div>* 해당 문서에서는 스토리 감상 시스템이 이미 구현되었다고 가정합니다.</div><div><br></div></div><div><div><a href="https://i.imgur.com/Rps3NzI.jpeg" target="_blank"><img src="https://i.imgur.com/Rps3NzI.jpeg" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></div><div>후일담 스토리 최초 감상 시 보상을 지급합니다.</div></div><div><br></div><div>부탁을 통해 후일담 스토리가 해금되었다고 하여도, <b>대상 캐릭터를 보유하지 않은 경우 스토리를 감상할 수 없습니다.</b></div><div><br></div><div><table class="content-table" style="width: 1518px;"><tbody><tr><th><span style="background-color: rgb(255, 255, 255);"><font color="#000000">💡 왜 캐릭터가 없다면 후일담 스토리를 감상할 수 없나요?</font><br><font color="#000000">후일담 스토리는 기본적으로 플레이어와 캐릭터 간의 깊은 유대관계를 보여주는 스토리를 제공할 것으로 예상합니다.</font><br><font color="#000000">스토리 몰입도와 스포일러 방지, 수집 욕구 자극 등의 이유로 캐릭터 미보유 시 후일담 스토리를 감상할 수 없도록 제한합니다.</font></span></th></tr></tbody></table></div><div><br></div><div><br></div><div><br><br><h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="5.2. " id="heading-7biwia9if"><a href="#dynamic-toc" class="toc-backlink">일일 미션 시스템과의 연계<br></a></h2><hr><p>* 해당 문서에서는 일일 미션 시스템이 이미 구현되었다고 가정합니다.</p><p><br></p><p>유저가 수행해야 하는 일일 퀘스트를 한 번에 확인하고 부탁 퀘스트를 놓치지 않도록, 기존 일일 미션 시스템과 연계합니다.</p><p><br></p><p><a href="https://i.imgur.com/yT8xNoD.png" target="_blank"><img src="https://i.imgur.com/yT8xNoD.png" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></p><p>부탁 분기 퀘스트를 아직 수령하지 않은 경우, '일일 미션 시스템'에서의 '부탁 퀘스트' 수령을 안내합니다.</p><p>'부탁 확인' 버튼을 눌러 '부탁 화면'으로 바로 진입할 수 있습니다.</p><p><br></p><a href="https://i.imgur.com/p2PATIT.jpeg" target="_blank"><img src="https://i.imgur.com/p2PATIT.jpeg" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br><p>부탁 분기 퀘스트가 진행중인 경우, '일일 미션 시스템'에서도 일일 분기 퀘스트의 내용을 확인할 수 있습니다.</p><p><br></p><p><a href="https://i.imgur.com/NzS94oi.png" target="_blank"><img src="https://i.imgur.com/NzS94oi.png" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></p><p>부탁 분기 퀘스트의 조건을 달성했으나 보상을 수령하지 않은 경우, 일일 미션 시스템에서도 이를 안내합니다.</p><p>'부탁 확인' 버튼을 눌러 부탁 화면으로 바로 진입할 수 있습니다.</p><p><br></p><p>보상 수령이 완료된 경우에는 기존 일일 미션 시스템의 완료 처리 규칙을 따릅니다.</p><div><br></div></div></div><div><br></div><br><br>
+        <h1 style="font-size: 28px; color: rgb(0, 0, 0);" id="heading-gl4nh8v78" data-prefix="6. "><a href="#dynamic-toc" class="toc-backlink"></a>화면별 UI 세부 요소</h1><div><hr id="null"><br></div><h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="6.1. " id="heading-9jd9i3r6z"><a href="#dynamic-toc" class="toc-backlink">메인 로비 화면</a></h2><div><hr id="null"><a href="https://i.imgur.com/Hd2AtqL.png" target="_blank"><img src="https://i.imgur.com/Hd2AtqL.png" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></div><h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" id="heading-ixst9turn" data-prefix="6.1.1. ">'<a href="#dynamic-toc" class="toc-backlink">부탁' 진입 버튼의 레드닷 표시 규칙</a></h3>
+        <p>다음과 같은 조건을 충족할 경우, '부탁' 진입 버튼에 레드닷을 표시합니다.</p><p>1) 아직 분기 퀘스트를 수령하지 않은 경우</p><p>2) 분기 퀘스트의 완료 조건을 충족하였고, 완료 보상을 수령하지 않은 경우</p>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <br><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="6.2. " id="heading-s7yj06yye"><a href="#dynamic-toc" class="toc-backlink">부탁 화면<br></a></h2>
+        <hr>
+        <a href="https://i.imgur.com/zmGwiSD.jpeg" target="_blank"><img src="https://i.imgur.com/zmGwiSD.jpeg" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br><br><br>
+        <h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" id="heading-lv6wlbycd" data-prefix="6.2.1. "><a href="#dynamic-toc" class="toc-backlink">캐릭터 카드 UI 구성 요소</a></h3>
+        
+        <hr id="null"><a href="https://i.imgur.com/V4QuV14.png" target="_blank"><img src="https://i.imgur.com/V4QuV14.png" style="max-width: 500px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br><br><table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">번호</th>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 55%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>캐릭터 초상화</td>
+                    <td>해당 캐릭터의 초상화 이미지<br><ul><li><a href="#heading-6ohira5qc" style="color: rgb(0, 82, 204);">캐릭터 초상화 데이터는 부탁 테이블 (DailyRequest) ▷ CharacterKey 를 통해 연결됨</a></li></ul></td>
+                </tr><tr>
+                    <td>2</td>
+                    <td>부탁 이름</td>
+                    <td>해당 부탁 이름<br><ul><li><a href="#heading-6ohira5qc" style="color: rgb(0, 82, 204);">부탁 테이블 (DailyRequest) ▷ RequestNameLocale</a>&nbsp;</li></ul></td>
+                </tr>
+                <tr>
+                    <td><b>3</b></td>
+                    <td>진행도</td>
+                    <td>해당 부탁의 '진행도'를 표기하는 라벨.<br>'진행도'의 수치에 대해서는&nbsp;<a href="#heading-r72hy5cjz" style="color: rgb(0, 82, 204);">4.1.3. 확률 계산</a>&nbsp;참고<br><br><a href="https://i.imgur.com/yKuR3mb.png" target="_blank"><img src="https://i.imgur.com/yKuR3mb.png" style="max-width: 300px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 100px;"></a><br>진행도가 1인 경우, 텍스트 색상 등을 통해 강조 처리</td>
+                </tr>
+                <tr>
+                    <td><b>4</b></td>
+                    <td>캐릭터 이름</td>
+                    <td>해당 캐릭터의 이름 표시<br><ul><li><a href="#heading-6ohira5qc" style="color: rgb(0, 82, 204);">캐릭터 이름 데이터는 부탁 테이블 (DailyRequest) ▷ CharacterKey 를 통해 연결됨</a></li></ul></td>
+                </tr><tr>
+                    <td><b>5</b></td>
+                    <td>후일담 보상 안내</td>
+                    <td>후일담 스토리 보상에 대한 안내 텍스트 영역<br>후일담 스토리가 해금되지 않은 경우, 스토리명과 획득 방법 안내<br><ul><li>"모든 분기 클리어 시 [후일담스토리명] 해금"</li></ul><br><a href="https://i.imgur.com/8kOShaU.png" target="_blank"><img src="https://i.imgur.com/8kOShaU.png" style="max-width: 400px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 100px;"></a><br>이미 후일담 스토리가 해금된 경우, 영역 색상과 텍스트 색상 등을 통해 강조 처리<br><ul><li>"후일담 스토리 해금 완료"</li></ul></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목3 전 줄바꿈 1번 -->
+        <br><br>
+        <h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" id="heading-u1t0vzsxe" data-prefix="6.2.2. "><a href="#dynamic-toc" class="toc-backlink">상황별 부탁 화면 진입 과정</a></h3>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 30%;">참고 이미지</th>
+                    <th style="width: 40%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>분기 퀘스트가 미수령 상태인 경우</b><br><ul style=""><li style=""><a href="#heading-y7wual3nl" style="color: rgb(0, 82, 204);">DailyRequestStatus가&nbsp;NotAccepted인 경우</a></li></ul></td>
+                    <td><a href="https://i.imgur.com/zmGwiSD.jpeg" target="_blank"><img src="https://i.imgur.com/zmGwiSD.jpeg" style="max-width: 100%; cursor: pointer; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td>캐릭터 카드를 터치해 부탁 팝업을 열 수 있는 화면으로 연결<br></td>
+                </tr>
+                <tr>
+                    <td><b>분기 퀘스트가 진행중인 경우</b><br><ul style=""><li style=""><a href="#heading-y7wual3nl" style="color: rgb(0, 82, 204);">DailyRequestStatus가 Accepted인 경우</a></li></ul></td>
+                    <td><a href="https://i.imgur.com/wjCfMJO.jpeg" target="_blank"><img src="https://i.imgur.com/wjCfMJO.jpeg" style="max-width: 100%; cursor: pointer; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td>부탁 화면 진입 시, 진행중인 부탁 팝업이 곧바로 표시</td>
+                </tr>
+                <tr>
+                    <td><b>&nbsp;분기 퀘스트를 완료한 경우</b><br><ul style=""><li style=""><a href="#heading-y7wual3nl" style="color: rgb(0, 82, 204);">DailyRequestStatus가 Completed 혹은 Claimed인 경우</a></li></ul></td>
+                    <td><a href="https://i.imgur.com/Hok5AL8_d.webp?maxwidth=760&amp;fidelity=grand" target="_blank"><img src="https://i.imgur.com/Hok5AL8_d.webp?maxwidth=760&amp;fidelity=grand" style="max-width: 100%; cursor: pointer; border: 1px solid #cbd5e1; border-radius: 4px; margin: 10px 0;"></a></td>
+                    <td>부탁 화면 진입 시, 완료한 부탁 팝업이 곧바로 표시</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <br><br><br>
+        <h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="6.3. " id="heading-s7gez104t"><a href="#dynamic-toc" class="toc-backlink">부탁 팝업<br></a></h2>
+        <hr>
+        <a href="https://i.imgur.com/tFMsEJt.jpeg" target="_blank"><img src="https://i.imgur.com/tFMsEJt.jpeg" style="max-width: 800px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br><br>
+        <h3 style="font-size: 20px; color: rgb(0, 82, 204);" id="heading-qdu4hhd3t" data-prefix="6.3.1. "><a href="#dynamic-toc" class="toc-backlink">팝업 UI 구성 요소 / 공통</a></h3><div><hr id="null"><a href="https://i.imgur.com/RmAK3Em.jpeg" target="_blank"><img src="https://i.imgur.com/RmAK3Em.jpeg" style="max-width: 1000px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></div>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">번호</th>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 55%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>캐릭터 이름 영역</td>
+                    <td>해당 캐릭터의 이름 표시<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">캐릭터 이름 데이터는 부탁 테이블 (DailyRequest)&nbsp;▷ CharacterKey 를 통해 연결됨</a></li></ul></td>
+                </tr><tr>
+                    <td><b>2</b></td>
+                    <td>분기 수집 진행도 표기 영역</td>
+                    <td>해당 부탁의 진행도 표시<br><ul><li>진행도에 대해서는&nbsp;<a href="#heading-r72hy5cjz" style="color: rgb(0, 82, 204);">4.1.3. 확률 계산</a>&nbsp;항목 참고</li></ul></td>
+                </tr>
+                <tr>
+                    <td><b>3</b></td>
+                    <td>캐릭터 초상화</td>
+                    <td>해당 캐릭터의 초상화 이미지<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">캐릭터 초상화 데이터는 부탁 테이블 (DailyRequest) ▷ CharacterKey 를 통해 연결됨</a></li></ul></td>
+                </tr>
+                <tr>
+                    <td><b>4</b></td>
+                    <td>캐릭터 대사 영역</td>
+                    <td>상황에 대응하는 대사가 출력되는 말풍선 영역</td>
+                </tr>
+                
+                <tr>
+                    <td><b>5</b></td>
+                    <td>팝업 외부 디밍 처리 영역</td>
+                    <td>상황에 따라 터치 결과가 <b>달라짐</b></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목3 전 줄바꿈 1번 -->
+        <br><br><br>
+        <h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" id="heading-9yyyedwy1" data-prefix="6.3.2. "><a href="#dynamic-toc" class="toc-backlink">팝업 UI 구성 요소/ 해결방안 선택 단계</a></h3><div><hr id="null"></div><a href="https://i.imgur.com/ffTQHmq.jpeg" target="_blank"><img src="https://i.imgur.com/ffTQHmq.jpeg" style="max-width: 1000px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">번호</th>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 55%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>해결 방안 선택지</td>
+                    <td>부탁에 대한 해결 방안이 표시되는 선택지 버튼들. 각 선택지 버튼은 부탁 분기 퀘스트와 1:1 대응. <br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ RouteTextLocale</a></li></ul><a href="https://i.imgur.com/dVZgHO3.png" target="_blank"><img src="https://i.imgur.com/dVZgHO3.png" style="max-width: 500px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br>기존에 해당 부탁 분기 퀘스트를 클리어한 경우, 체크박스 아이콘을 버튼 위에 표시.</td>
+                </tr><tr>
+                    <td><strong>2</strong></td>
+                    <td>퀘스트 목표 및 보상 영역</td>
+                    <td>해결 방안 선택지를 터치할 경우, 대응하는 퀘스트 목표와 보상으로 내용 변경<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ QuestConditionKey</a></li><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest)&nbsp;▷ RewardKey</a></li></ul></td>
+                </tr>
+                <tr>
+                    <td><b>3</b></td>
+                    <td>캐릭터 대사 영역</td>
+                    <td>부탁 데이터의 '미수령 대사' 출력<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">부탁 테이블 (DailyRequest)&nbsp;▷ RequestDialogLocale</a></li></ul></td>
+                </tr>
+                
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>부탁 수령 버튼</td>
+                    <td>선택한 '해결 방안 선택지'가 없을 경우, 버튼 비활성화<br><br>터치시, 선택한 '해결 방안 선택지'에 대응하는 '부탁 분기 퀘스트'를 수령.<br><br></td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td>팝업 외부 디밍 처리 영역</td>
+                    <td>터치 시, 팝업을 닫음</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목3 전 줄바꿈 1번 -->
+        <br><br><br>
+        <h3 style="font-size: 20px; color: rgb(0, 82, 204); outline-offset: 4px;" id="heading-y7cf81e40" data-prefix="6.3.3. "><a href="#dynamic-toc" class="toc-backlink">팝업 UI 구성 요소/ 분기 퀘스트&nbsp;</a>진행중 상태</h3>
+        <hr id="null"><a href="https://i.imgur.com/OBeR6T0.jpeg" target="_blank"><img src="https://i.imgur.com/OBeR6T0.jpeg" style="max-width: 1000px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br><table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">번호</th>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 55%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><b>1</b></td>
+                    <td>해결 방안 선택지</td>
+                    <td>수령한 '부탁 분기 퀘스트'에 대응하는 선택지 텍스트만 출력<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ RouteTextLocale</a></li></ul></td>
+                </tr><tr>
+                    <td><strong>2</strong></td>
+                    <td>퀘스트 목표 및 보상 영역</td>
+                    <td>부탁 분기 퀘스트 데이터의 퀘스트 목표와 보상 표시<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ QuestConditionKey</a></li><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ RewardKey</a></li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>캐릭터 대사 영역</td>
+                    <td>부탁 분기 퀘스트 데이터의 '진행중 대사' 출력<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ AcceptDialogLocale</a></li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>바로가기 버튼</td>
+                    <td>부탁 분기 퀘스트의 '목표 수행 씬'으로 이동하는 버튼.&nbsp;<br><ul><li>분기 퀘스트 테이블에서 연결된 QuestCondition에서 해당 데이터를 지닌다고 가정함</li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td>일일 미션 페이지 버튼</td>
+                    <td>'일일 미션' 화면으로 이동하는 버튼.&nbsp;</td>
+                </tr>
+                
+                <tr>
+                    <td><b>6</b></td>
+                    <td>팝업 외부 디밍 처리 영역</td>
+                    <td>터치 시, 로비 화면으로 이동</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목3 전 줄바꿈 1번 -->
+        <br><br><br>
+        <h3 style="font-size: 20px; color: rgb(0, 82, 204);" id="heading-blwr0ovio" data-prefix="6.3.4. "><a href="#dynamic-toc" class="toc-backlink">팝업 UI 구성 요소/ 분기 퀘스트 완료 상태</a></h3>
+        
+        <hr id="null"><a href="https://i.imgur.com/clSliqB.jpeg" target="_blank"><img src="https://i.imgur.com/clSliqB.jpeg" style="max-width: 1000px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a><br><table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">번호</th>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 55%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>보상 영역</td>
+                    <td>획득 완료한 보상 표기</td>
+                </tr><tr>
+                    <td><b>2</b></td>
+                    <td>캐릭터 대사 영역</td>
+                    <td>부탁 분기 퀘스트의 '완료 대사' 출력<br><ul><li><a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">분기 퀘스트 테이블 (DailyRequestRouteQuest) ▷ CompleteDialogLocale</a></li></ul></td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>확인 버튼</td>
+                    <td>터치 시, 로비 화면으로 이동</td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>팝업 외부 디밍 처리 영역</td>
+                    <td>터치 시, 로비 화면으로 이동</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 제목2 전 줄바꿈 2번, 아래 가로줄 추가 -->
+        <p style="font-size: 14px; color: rgb(23, 43, 77);"><br></p><p style="font-size: 14px; color: rgb(23, 43, 77);"><br></p><h2 style="font-size: 22px; color: rgb(7, 71, 166); outline-offset: 4px;" data-prefix="6.4. " id="heading-js4ruxx4u"><a href="#dynamic-toc" class="toc-backlink">후일담 스토리 해금 팝업</a></h2><div><hr id="null"></div><p><a href="https://i.imgur.com/km12yxK.jpeg" target="_blank"><img src="https://i.imgur.com/km12yxK.jpeg" style="max-width: 1000px; cursor: pointer; border: 1px solid rgb(203, 213, 225); border-radius: 4px; margin: 10px 0px; min-width: 300px;"></a></p><p>해당 팝업은 '부탁 팝업' 레이어 위에 표시됨</p>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">번호</th>
+                    <th style="width: 30%;">구분</th>
+                    <th style="width: 55%;">설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>팝업 이름</td>
+                    <td>"(부탁 이름) 후일담 해금" 텍스트 출력<br><ul><li>부탁 이름은<a href="#heading-p4w5eg22v" style="color: rgb(0, 82, 204);">&nbsp;부탁 테이블 (DailyRequest) ▷ RequestNameLocale&nbsp;</a>데이터 사용</li></ul><br></td>
+                </tr><tr>
+                    <td><b>2</b></td>
+                    <td>닫기 버튼</td>
+                    <td>터치 시, 해당 팝업 닫음</td>
+                </tr><tr>
+                    <td><b>3</b></td>
+                    <td>팝업창 내용 텍스트 영역</td>
+                    <td>부탁 데이터와 관계없이, 고정 로케일 연결<br><ul><li>"모든 해결 루트를 공략하여, 신규 에피소드가 해금되었습니다."</li></ul></td>
+                </tr>
+                <tr>
+                    <td><b>4</b></td>
+                    <td>바로가기 버튼</td>
+                    <td>스토리 화면으로 이동</td>
+                </tr>
+                <tr>
+                    <td><b>5</b></td>
+                    <td>팝업 외부 디밍 처리 영역</td>
+                    <td>터치 시, 해당 팝업 닫음</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ================================================================================= -->
+        <!-- 5. 콘텐츠 제공 방향 (제목1 전 줄바꿈 3번) -->
+        <!-- ================================================================================= -->
+        <br><p><br></p><h1 data-prefix="7. " id="heading-m6abyh8hh" style="font-size: 28px; color: rgb(0, 0, 0);"><a href="#dynamic-toc" class="toc-backlink">라이브 서비스 운영 예시</a></h1><div><hr id="null"><p class="isSelectedEnd">부탁 콘텐츠는 각 부탁의 기본 가중치와 등장 조건을 데이터로 관리하므로, 라이브 서비스 상황에 따라 특정 캐릭터나 특정 기간의 부탁을 유연하게 운영할 수 있습니다.</p><p>본 장에서는 부탁 콘텐츠를 라이브 서비스 운영에 활용할 수 있는 대표적인 예시를 설명합니다.</p><p><br></p></div><h2 data-prefix="7.1. " id="heading-z3vlxi3ym" style="font-size: 22px; color: rgb(7, 71, 166);"><a href="#dynamic-toc" class="toc-backlink">특정 캐릭터의 부탁 노출 강화</a></h2><div><hr id="null"></div><p>특정 캐릭터를 집중적으로 소개해야 하는 시점에는 해당 캐릭터와 연결된 부탁의 기본 가중치를 높여 일일 부탁 목록에 등장할 확률을 조정할 수 있습니다.</p><p><ul><li>예시</li><ul><li>신규 캐릭터 출시</li><li>캐릭터 픽업 이벤트</li><li>캐릭터 생일</li><li>메인 스토리 업데이트</li></ul></ul></p><p><br></p><p>이 방식은 별도의 신규 시스템을 추가하지 않고, 부탁 데이터의 기본 가중치 값을 조정하는 방식으로 운영할 수 있습니다.&nbsp;</p><p>따라서 특정 기간 동안 유저가 해당 캐릭터의 부탁을 더 자주 접하도록 만들 수 있으며, 캐릭터의 성격과 관계성, 이야기 소재를 자연스럽게 노출할 수 있습니다.</p><p><br></p><p>예를 들어 신규 캐릭터 픽업 기간에는 해당 캐릭터의 부탁 가중치를 일시적으로 높여, 유저가 캐릭터를 보유하지 않은 상태에서도 부탁을 통해 캐릭터의 매력을 일부 경험하도록 유도할 수 있습니다.&nbsp;</p><p>이를 통해 부탁 콘텐츠는 단순한 일일 퀘스트가 아니라, 신규 캐릭터 소개와 획득 동기를 보조하는 운영 수단으로 활용될 수 있습니다.</p><p><br></p><p><br></p><h2 data-prefix="7.2. " id="heading-mu7ieij2v" style="font-size: 22px; color: rgb(7, 71, 166);"><a href="#dynamic-toc" class="toc-backlink">기간 한정 부탁</a></h2><div><hr id="null"></div><p>추후 이벤트, 시즌, 기념일, 캐릭터 생일 등 특정 기간에만 등장하는 기간 한정 부탁을 구성할 수 있습니다.</p><p><br></p><p>예를 들어 여름 이벤트 기간에는 수영복 캐릭터와 관련된 부탁을 추가하거나, 캐릭터 생일 기간에는 해당 캐릭터의 생일 에피소드와 연결된 부탁을 제공할 수 있습니다.&nbsp;</p><p>이처럼 기간 한정 부탁은 이벤트 분위기를 일일 접속 루틴 안에 자연스럽게 반영하고, 유저가 이벤트 기간 동안 매일 접속할 동기를 강화하는 데 활용할 수 있습니다.</p><p><br></p><p>단, 기간 한정 부탁은 등장 가능한 기간이 제한되어 있으므로, 유저가 해당 기간 안에 부탁을 충분히 접하지 못할 가능성이 있습니다.</p><p>이를 방지하기 위해 기간 한정 부탁은 일반 부탁보다 높은 기본 가중치를 설정하거나, 이벤트 기간 동안 후보군에 포함될 수 있도록 등장 조건을 명확히 설정합니다.</p><p>다만 특정 기간 안에 반드시 경험해야 하는 핵심 이벤트성 부탁이라면, 기본 가중치 조정만으로는 충분하지 않을 수 있습니다. 이 경우에는 별도의 우선 등장 규칙이나 보정 규칙을 추가로 검토할 수 있습니다.</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+    <script>
+        function changeView(viewId, stepTitle, stepDescription) {
+            document.querySelectorAll('.game-view').forEach(v => v.classList.remove('active'));
+            const targetView = document.getElementById(viewId);
+            if(targetView) targetView.classList.add('active');
+            if(document.getElementById('dashStep')) document.getElementById('dashStep').innerText = stepTitle;
+            if(document.getElementById('dashDesc')) document.getElementById('dashDesc').innerText = stepDescription;
+        }
+        function openAffinityPopup(popupId) {
+            const pop = document.getElementById(popupId);
+            if(pop) pop.style.display = 'flex';
+        }
+        function closeAffinityPopup(popupId) {
+            const pop = document.getElementById(popupId);
+            if(pop) pop.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
